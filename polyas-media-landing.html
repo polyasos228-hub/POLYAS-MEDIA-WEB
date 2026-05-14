@@ -340,10 +340,11 @@
   .clock-face{color:var(--lime);filter:drop-shadow(0 0 4px rgba(57,255,20,0.6))}
   /* Design carousel: centered, larger thumbs, edge fades */
   #panel-design .design-panel{padding:0}
-  #panel-design .thumb-carousel-wrap{max-width:960px;margin:0 auto;overflow:hidden;border-radius:var(--r-lg);position:relative}
-  #panel-design .thumb-carousel-wrap::before,#panel-design .thumb-carousel-wrap::after{display:block !important;content:"";position:absolute;top:0;bottom:0;width:100px;z-index:3;pointer-events:none}
-  #panel-design .thumb-carousel-wrap::before{left:0;background:linear-gradient(to right,var(--bg-1) 0%,transparent 100%)}
-  #panel-design .thumb-carousel-wrap::after{right:0;background:linear-gradient(to left,var(--bg-1) 0%,transparent 100%)}
+  #panel-design .thumb-carousel-wrap{max-width:960px;margin:0 auto;overflow:visible;border-radius:var(--r-lg);position:relative}
+  #panel-design .thumb-carousel-inner{overflow:hidden;border-radius:var(--r-lg);padding:14px 0}
+  #panel-design .thumb-carousel-wrap::before,#panel-design .thumb-carousel-wrap::after{display:block !important;content:"";position:absolute;top:0;bottom:0;width:140px;z-index:4;pointer-events:none}
+  #panel-design .thumb-carousel-wrap::before{left:0;background:linear-gradient(to right,#111111 0%,#111111 20%,transparent 100%)}
+  #panel-design .thumb-carousel-wrap::after{right:0;background:linear-gradient(to left,#111111 0%,#111111 20%,transparent 100%)}
   #panel-design .thumb-item{width:300px;height:169px;border-radius:var(--r-md)}
   </style>
 </head>
@@ -863,6 +864,7 @@
       <div class="design-panel">
         <p class="design-label" data-key="design.note">10 обложек из нашего портфолио — каждая оптимизирована под CTR. Добавьте свои превью в папку assets/thumbnails/ чтобы отобразились здесь.</p>
         <div class="thumb-carousel-wrap" style="border-radius:var(--r-lg)">
+          <div class="thumb-carousel-inner">
           <div class="thumb-track">
             <div class="thumb-item"><img src="assets/thumbnails/thumb-01.jpg" alt=""/></div>
             <div class="thumb-item"><img src="assets/thumbnails/thumb-02.jpg" alt=""/></div>
@@ -1483,6 +1485,35 @@ document.querySelectorAll('.btn-solid,.btn-lime').forEach(btn=>{
     requestAnimationFrame(tick);
   }
   tick();
+})();
+
+/* VIDEO MODAL */
+(function(){
+  var modal=document.getElementById('videoModal');
+  var player=document.getElementById('vmPlayer');
+  var closeBtn=document.getElementById('vmClose');
+  if(!modal||!player) return;
+  function openVideo(src){
+    player.src=src;
+    modal.classList.add('open');
+    player.play().catch(function(){});
+    document.body.style.overflow='hidden';
+  }
+  function closeVideo(){
+    modal.classList.remove('open');
+    player.pause();
+    player.src='';
+    document.body.style.overflow='';
+  }
+  document.querySelectorAll('.case-card[data-video]').forEach(function(card){
+    card.addEventListener('click',function(e){
+      if(e.target.closest('a')) return;
+      openVideo(this.dataset.video);
+    });
+  });
+  closeBtn.addEventListener('click',closeVideo);
+  modal.addEventListener('click',function(e){if(e.target===modal) closeVideo();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape') closeVideo();});
 })();
 
 </script>
