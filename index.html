@@ -411,7 +411,7 @@
 <nav id="nav">
   <div class="container">
     <div class="nav-inner">
-      <div class="nav-logo"><img src="assets/logo.svg" alt="POLYAS MEDIA" height="22" style="display:block;width:auto" onerror="this.outerHTML='POLYAS<span style=&quot;color:var(--lime)&quot;>.</span>MEDIA'"></div>
+      <div class="nav-logo"><img src="assets/logo.png" alt="POLYAS MEDIA" height="22" style="display:block;width:auto" onerror="this.outerHTML='POLYAS<span style=&quot;color:var(--lime)&quot;>.</span>MEDIA'"></div>
       <ul class="nav-links">
         <li><a href="#about"    data-key="nav.about">О компании</a></li>
         <li><a href="#services" data-key="nav.services">Услуги</a></li>
@@ -1114,7 +1114,7 @@
   <div class="container">
     <div class="footer-top">
       <div>
-        <div class="footer-logo"><img src="assets/logo.svg" alt="POLYAS MEDIA" height="28" style="display:block;width:auto" onerror="this.outerHTML='POLYAS<span style=&quot;color:var(--lime)&quot;>.</span>MEDIA'"></div>
+        <div class="footer-logo"><img src="assets/logo.png" alt="POLYAS MEDIA" height="28" style="display:block;width:auto" onerror="this.outerHTML='POLYAS<span style=&quot;color:var(--lime)&quot;>.</span>MEDIA'"></div>
         <p class="footer-tagline" data-key="footer.tagline">Визуальный капитал для лидеров рынка. RU &amp; EN продакшн высшего уровня.</p>
         <div class="footer-social">
           <a href="https://www.youtube.com/@polyasmedia" target="_blank" class="footer-social-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span data-key="footer.yt">YouTube — Иван Исаков</span></a>
@@ -1590,7 +1590,7 @@ document.querySelectorAll('.btn-solid,.btn-lime').forEach(btn=>{
 /* VIDEO MODAL */
 (function(){
   // Modal HTML injected inline so it's always in DOM
-  var modalHTML='<div id="videoModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px"><div class="vm-wrap" style="position:relative;width:100%;max-width:960px;background:#0d0d0d;border-radius:16px;overflow:hidden;border:1px solid rgba(57,255,20,0.15);box-shadow:0 0 80px rgba(57,255,20,0.08),0 32px 80px rgba(0,0,0,0.8);animation:vmIn .3s cubic-bezier(.22,.68,0,1.2) both"><button id="vmClose" style="position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10">✕</button><video id="vmPlayer" controls playsinline preload="none" style="width:100%;display:block;max-height:80vh;background:#000"></video><div style="position:absolute;bottom:56px;left:16px;z-index:20;pointer-events:none;opacity:0.7"><img src=\"assets/logo.svg\" alt=\"POLYAS MEDIA\" style=\"height:16px;width:auto\" onerror=\"this.outerHTML='<span style=\\&quot;font-family:Unbounded,sans-serif;font-size:10px;font-weight:900;color:#fff;letter-spacing:.04em\\&quot;>POLYAS<span style=\\&quot;color:#39FF14\\&quot;>.</span>MEDIA</span>'\"></div></div></div>';
+  var modalHTML='<div id="videoModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px"><div class="vm-wrap" style="position:relative;width:100%;max-width:960px;background:#0d0d0d;border-radius:16px;overflow:hidden;border:1px solid rgba(57,255,20,0.15);box-shadow:0 0 80px rgba(57,255,20,0.08),0 32px 80px rgba(0,0,0,0.8);animation:vmIn .3s cubic-bezier(.22,.68,0,1.2) both"><button id="vmClose" style="position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10">✕</button><video id="vmPlayer" controls playsinline preload="none" style="width:100%;display:block;max-height:80vh;background:#000"></video><div style="position:absolute;bottom:56px;left:16px;z-index:20;pointer-events:none;opacity:0.7"><img src=\"assets/logo.png\" alt=\"POLYAS MEDIA\" style=\"height:16px;width:auto\" onerror=\"this.outerHTML='<span style=\\&quot;font-family:Unbounded,sans-serif;font-size:10px;font-weight:900;color:#fff;letter-spacing:.04em\\&quot;>POLYAS<span style=\\&quot;color:#39FF14\\&quot;>.</span>MEDIA</span>'\"></div></div></div>';
   document.body.insertAdjacentHTML('beforeend', modalHTML);
   var modal=document.getElementById('videoModal');
   var player=document.getElementById('vmPlayer');
