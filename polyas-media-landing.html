@@ -716,7 +716,7 @@
         <div class="case-card" data-video="assets/videos/reel-sergey.mp4">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <img src="assets/clients/sergey-mukhom.jpg" alt="Sergey" onerror="this.style.display='none'"/>
+            <img src="assets/clients/sergey-mukhom.jpg" style="object-position:center 5%" alt="Sergey" onerror="this.style.display='none'"/>
             <div class="case-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
             <div class="case-type-tag">YouTube</div>
           </div>
@@ -755,7 +755,7 @@
         <div class="case-card" data-video="assets/videos/reel-martel.mp4">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <img src="assets/clients/martel-metellus.jpg" alt="Martel Metellus" onerror="this.style.display='none'"/>
+            <img src="assets/clients/martel-metellus.jpg" style="object-position:center 10%" alt="Martel Metellus" onerror="this.style.display='none'"/>
             <div class="case-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
             <div class="case-type-tag">VSL Ad</div>
           </div>
@@ -816,7 +816,7 @@
         <div class="case-card">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0a1a0a 0%,#0f2a0f 40%,#162216 100%);display:flex;align-items:center;justify-content:center"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">GET ASIC</span></div>
+            <img src="assets/cases/case-getasic.jpg" alt="GET ASIC" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center" onerror="this.style.display='none'"/><div style="position:absolute;inset:0;background:linear-gradient(135deg,#0a1a0a 0%,#0f2a0f 40%,#162216 100%);display:flex;align-items:center;justify-content:center;z-index:0"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">GET ASIC</span></div>
             <div class="case-type-tag">YouTube + Shorts</div>
           </div>
           <div class="case-body">
@@ -834,7 +834,7 @@
         <div class="case-card">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0f0f1a 0%,#141428 40%,#0a0a14 100%);display:flex;align-items:center;justify-content:center"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">NTS AUTO</span></div>
+            <img src="assets/cases/case-ntsauto.jpg" alt="NTS AUTO" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1" onerror="this.style.display='none'"/><div style="position:absolute;inset:0;background:linear-gradient(135deg,#0f0f1a 0%,#141428 40%,#0a0a14 100%);display:flex;align-items:center;justify-content:center;z-index:0"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">NTS AUTO</span></div>
             <div class="case-type-tag">B2B Funnel</div>
           </div>
           <div class="case-body">
@@ -852,7 +852,7 @@
         <div class="case-card">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a0f0a 0%,#281a0f 40%,#140a0a 100%);display:flex;align-items:center;justify-content:center"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">IC CONSULTING</span></div>
+            <img src="assets/cases/case-icconsulting.jpg" alt="IC Consulting" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1" onerror="this.style.display='none'"/><div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a0f0a 0%,#281a0f 40%,#140a0a 100%);display:flex;align-items:center;justify-content:center;z-index:0"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">IC CONSULTING</span></div>
             <div class="case-type-tag">Media Ecosystem</div>
           </div>
           <div class="case-body">
@@ -1503,18 +1503,20 @@ document.querySelectorAll('.btn-solid,.btn-lime').forEach(btn=>{
 
 /* VIDEO MODAL */
 (function(){
+  // Modal HTML injected inline so it's always in DOM
+  var modalHTML='<div id="videoModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px"><div class="vm-wrap" style="position:relative;width:100%;max-width:960px;background:#0d0d0d;border-radius:16px;overflow:hidden;border:1px solid rgba(57,255,20,0.15);box-shadow:0 0 80px rgba(57,255,20,0.08),0 32px 80px rgba(0,0,0,0.8);animation:vmIn .3s cubic-bezier(.22,.68,0,1.2) both"><button id="vmClose" style="position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10">✕</button><video id="vmPlayer" controls playsinline preload="none" style="width:100%;display:block;max-height:80vh;background:#000"></video></div></div>';
+  document.body.insertAdjacentHTML('beforeend', modalHTML);
   var modal=document.getElementById('videoModal');
   var player=document.getElementById('vmPlayer');
   var closeBtn=document.getElementById('vmClose');
-  if(!modal||!player) return;
   function openVideo(src){
     player.src=src;
-    modal.classList.add('open');
+    modal.style.display='flex';
     player.play().catch(function(){});
     document.body.style.overflow='hidden';
   }
   function closeVideo(){
-    modal.classList.remove('open');
+    modal.style.display='none';
     player.pause();
     player.src='';
     document.body.style.overflow='';
@@ -1531,14 +1533,6 @@ document.querySelectorAll('.btn-solid,.btn-lime').forEach(btn=>{
 })();
 
 </script>
-
-  <!-- ── VIDEO MODAL ── -->
-  <div id="videoModal">
-    <div class="vm-wrap">
-      <button id="vmClose" aria-label="Close">✕</button>
-      <video id="vmPlayer" controls playsinline preload="none"></video>
-    </div>
-  </div>
 
 </body>
 </html>
