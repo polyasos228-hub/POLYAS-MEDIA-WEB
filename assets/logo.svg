@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 36" fill="none">
+  <text y="27" font-family="'Unbounded','Inter',system-ui,sans-serif" font-weight="900" font-size="22" letter-spacing="0.5" fill="#FFFFFF">POLYAS</text>
+  <text x="107" y="27" font-family="'Unbounded','Inter',system-ui,sans-serif" font-weight="900" font-size="22" fill="#39FF14" filter="url(#g)">.</text>
+  <text x="120" y="27" font-family="'Unbounded','Inter',system-ui,sans-serif" font-weight="900" font-size="22" letter-spacing="0.5" fill="#FFFFFF">MEDIA</text>
+  <defs>
+    <filter id="g" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+</svg>

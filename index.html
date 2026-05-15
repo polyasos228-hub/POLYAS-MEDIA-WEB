@@ -188,7 +188,8 @@
   .cases-tab:hover:not(.active){color:var(--fg-2)}
   .cases-panel{display:none}.cases-panel.active{display:block}
   .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .case-card{background:var(--glass-bg);border:1px solid var(--glass-bd);border-radius:var(--r-lg);overflow:hidden;backdrop-filter:blur(18px);transition:transform .4s var(--ease),border-color .3s,box-shadow .35s;cursor:pointer}
+  .case-card{background:var(--glass-bg);border:1px solid var(--glass-bd);border-radius:var(--r-lg);overflow:hidden;backdrop-filter:blur(18px);transition:transform .4s var(--ease),border-color .3s,box-shadow .35s,opacity .7s var(--ease),translate .7s var(--ease);cursor:pointer;opacity:0;translate:0 32px}
+  .case-card.in{opacity:1;translate:0 0}
   .case-card:hover{transform:translateY(-7px) scale(1.016);border-color:rgba(57,255,20,0.4);box-shadow:0 24px 64px rgba(0,0,0,0.5),0 0 40px rgba(57,255,20,0.1)}
   .case-thumb{width:100%;aspect-ratio:16/9;background:var(--bg-2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
   .case-thumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
@@ -410,7 +411,7 @@
 <nav id="nav">
   <div class="container">
     <div class="nav-inner">
-      <div class="nav-logo">POLYAS<span>.</span>MEDIA</div>
+      <div class="nav-logo"><img src="assets/logo.svg" alt="POLYAS MEDIA" height="22" style="display:block;width:auto" onerror="this.outerHTML='POLYAS<span style=&quot;color:var(--lime)&quot;>.</span>MEDIA'"></div>
       <ul class="nav-links">
         <li><a href="#about"    data-key="nav.about">О компании</a></li>
         <li><a href="#services" data-key="nav.services">Услуги</a></li>
@@ -807,13 +808,13 @@
             <div class="case-type-tag">Showreel</div>
           </div>
           <div class="case-body">
-            <div class="case-client">POLYAS MEDIA — Иван Исаков</div>
-            <div class="case-title">Авторский Showreel — Narrative & Dynamic</div>
-            <p class="case-desc">Личный стиль монтажа основателя: кинематографичный ритм, emotion-driven cuts, Sound Design под каждый кадр. 4+ года в продакшне для топ-инфлюенсеров RU и EN рынков.</p>
+            <div class="case-client" data-key="c_ivan.client">POLYAS MEDIA — Иван Исаков</div>
+            <div class="case-title" data-key="c_ivan.title">Авторский Showreel — Narrative &amp; Dynamic</div>
+            <p class="case-desc" data-key="c_ivan.desc">Личный стиль монтажа основателя: кинематографичный ритм, emotion-driven cuts, Sound Design под каждый кадр. 4+ года в продакшне для топ-инфлюенсеров RU и EN рынков.</p>
             <div class="case-stats">
-              <div class="cs-item"><div class="cs-val">4+</div><div class="cs-label">лет опыта</div></div>
-              <div class="cs-item"><div class="cs-val">YT · VSL</div><div class="cs-label">форматы</div></div>
-              <div class="cs-item"><div class="cs-val">RU · EN</div><div class="cs-label">рынки</div></div>
+              <div class="cs-item"><div class="cs-val">4+</div><div class="cs-label" data-key="c_ivan.s1">лет опыта</div></div>
+              <div class="cs-item"><div class="cs-val">YT · VSL</div><div class="cs-label" data-key="c_ivan.s2">форматы</div></div>
+              <div class="cs-item"><div class="cs-val">RU · EN</div><div class="cs-label" data-key="c_ivan.s3">рынки</div></div>
             </div>
           </div>
         </div>
@@ -830,11 +831,11 @@
           </div>
           <div class="case-body">
             <div class="case-client">Martel Metellus — 108K YT</div>
-            <div class="case-title">High-Converting VSL for YouTube Influencer</div>
-            <p class="case-desc">@MindofMartel — 108K subscribers. Niche: masculine growth, strength, mindset. Edited a sales VSL for his coaching offer — narrative arc, cinematic Sound Design, precision pacing.</p>
+            <div class="case-title" data-key="c_martel.title">High-Converting VSL for YouTube Influencer</div>
+            <p class="case-desc" data-key="c_martel.desc">@MindofMartel — 108K subscribers. Niche: masculine growth, strength, mindset. Edited a sales VSL for his coaching offer — narrative arc, cinematic Sound Design, precision pacing.</p>
             <div class="case-stats">
-              <div class="cs-item"><div class="cs-val">108K</div><div class="cs-label">Subscribers</div></div>
-              <div class="cs-item"><div class="cs-val">VSL Ad</div><div class="cs-label">Format</div></div>
+              <div class="cs-item"><div class="cs-val">108K</div><div class="cs-label" data-key="c_martel.s1">Subscribers</div></div>
+              <div class="cs-item"><div class="cs-val">VSL Ad</div><div class="cs-label" data-key="c_martel.s2">Format</div></div>
             </div>
           </div>
         </div>
@@ -848,11 +849,11 @@
           </div>
           <div class="case-body">
             <div class="case-client">Dudley J. Edouard — 27K YT</div>
-            <div class="case-title">VSL for Men's Identity Coaching</div>
-            <p class="case-desc">@DudleyJEdouard — 27K subscribers. Helping men break plateaus &amp; refine identity. Edited a high-converting VSL ad for his coaching program with emotional narrative arc and professional pacing.</p>
+            <div class="case-title" data-key="c_dudley.title">VSL for Men's Identity Coaching</div>
+            <p class="case-desc" data-key="c_dudley.desc">@DudleyJEdouard — 27K subscribers. Helping men break plateaus &amp; refine identity. Edited a high-converting VSL ad for his coaching program with emotional narrative arc and professional pacing.</p>
             <div class="case-stats">
-              <div class="cs-item"><div class="cs-val">27K</div><div class="cs-label">Subscribers</div></div>
-              <div class="cs-item"><div class="cs-val">VSL Ad</div><div class="cs-label">Format</div></div>
+              <div class="cs-item"><div class="cs-val">27K</div><div class="cs-label" data-key="c_dudley.s1">Subscribers</div></div>
+              <div class="cs-item"><div class="cs-val">VSL Ad</div><div class="cs-label" data-key="c_dudley.s2">Format</div></div>
             </div>
           </div>
         </div>
@@ -866,32 +867,15 @@
           </div>
           <div class="case-body">
             <div class="case-client">Donzel A. Leggett</div>
-            <div class="case-title">Mini-Podcast Series — Book Launch</div>
-            <p class="case-desc">Former Fortune 500 executive, Founder of Destiny Development Delta™. Edited a series of mini-podcast episodes based on his book "Make Your Destiny Happen" — cinematic cuts, branded motion graphics.</p>
+            <div class="case-title" data-key="c_donzel.title">Mini-Podcast Series — Book Launch</div>
+            <p class="case-desc" data-key="c_donzel.desc">Former Fortune 500 executive, Founder of Destiny Development Delta™. Edited a series of mini-podcast episodes based on his book "Make Your Destiny Happen" — cinematic cuts, branded motion graphics.</p>
             <div class="case-stats">
-              <div class="cs-item"><div class="cs-val">Series</div><div class="cs-label">Format</div></div>
-              <div class="cs-item"><div class="cs-val">Executive</div><div class="cs-label">Niche</div></div>
+              <div class="cs-item"><div class="cs-val">Series</div><div class="cs-label" data-key="c_donzel.s1">Format</div></div>
+              <div class="cs-item"><div class="cs-val">Executive</div><div class="cs-label" data-key="c_donzel.s2">Niche</div></div>
             </div>
           </div>
         </div>
-        <div class="case-card" data-video="assets/videos/reel-polyas.mp4">
-          <div class="case-thumb">
-            <div class="case-thumb-bg"></div>
-            <img src="assets/cases/thumb-polyas.jpg" alt="Ivan Isakov" style="object-position:center top" onerror="this.src='assets/photos/founder-ivan.jpg'"/>
-            <div class="case-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-            <div class="case-type-tag">Showreel</div>
-          </div>
-          <div class="case-body">
-            <div class="case-client">POLYAS MEDIA — Ivan Isakov</div>
-            <div class="case-title">Founder Showreel — Narrative & Dynamic</div>
-            <p class="case-desc">Personal editing style of the founder: cinematic rhythm, emotion-driven cuts, Sound Design for every frame. 4+ years producing content for top influencers in RU & EN markets.</p>
-            <div class="case-stats">
-              <div class="cs-item"><div class="cs-val">4+</div><div class="cs-label">yrs exp</div></div>
-              <div class="cs-item"><div class="cs-val">YT · VSL</div><div class="cs-label">formats</div></div>
-              <div class="cs-item"><div class="cs-val">RU · EN</div><div class="cs-label">markets</div></div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
 
@@ -908,12 +892,12 @@
           </div>
           <div class="case-body">
             <div class="case-client">GET ASIC</div>
-            <div class="case-title">Оборудование для майнинга</div>
-            <p class="case-desc">Пересобрали архитектуру позиционирования. Многоступенчатые воронки через экспертный контент (ROI оборудования), агрессивное SEO, связка Shorts + основной контент.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">31K → 3.9 млн охват за 8 месяцев</span></p>
+            <div class="case-title" data-key="c_asic.title">Оборудование для майнинга</div>
+            <p class="case-desc" data-key="c_asic.desc">Пересобрали архитектуру позиционирования. Многоступенчатые воронки через экспертный контент (ROI оборудования), агрессивное SEO, связка Shorts + основной контент.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">31K → 3.9 млн охват за 8 месяцев</span></p>
             <div class="case-stats">
-              <div class="cs-item"><div class="cs-val">3.9 млн</div><div class="cs-label">Охват</div></div>
-              <div class="cs-item"><div class="cs-val">100+</div><div class="cs-label">Заявок/мес</div></div>
-              <div class="cs-item"><div class="cs-val">20–55</div><div class="cs-label">Продаж/мес</div></div>
+              <div class="cs-item"><div class="cs-val">3.9 млн</div><div class="cs-label" data-key="c_asic.s1">Охват</div></div>
+              <div class="cs-item"><div class="cs-val">100+</div><div class="cs-label" data-key="c_asic.s2">Заявок/мес</div></div>
+              <div class="cs-item"><div class="cs-val">20–55</div><div class="cs-label" data-key="c_asic.s3">Продаж/мес</div></div>
             </div>
           </div>
         </div>
@@ -926,12 +910,12 @@
           </div>
           <div class="case-body">
             <div class="case-client">NTS AUTO</div>
-            <div class="case-title">Оптовые автотовары</div>
-            <p class="case-desc">Радикальная смена фокуса с розницы на бизнес-сегмент. Язык цифр — маржинальность, логистика. Воронка через бота с закрытым прайсом и мощный ретаргетинг.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">5 → 700+ B2B-заявок за 4 месяца</span></p>
+            <div class="case-title" data-key="c_nts.title">Оптовые автотовары</div>
+            <p class="case-desc" data-key="c_nts.desc">Радикальная смена фокуса с розницы на бизнес-сегмент. Язык цифр — маржинальность, логистика. Воронка через бота с закрытым прайсом и мощный ретаргетинг.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">5 → 700+ B2B-заявок за 4 месяца</span></p>
             <div class="case-stats">
-              <div class="cs-item"><div class="cs-val">11.8 млн</div><div class="cs-label">Просмотров</div></div>
-              <div class="cs-item"><div class="cs-val">700+</div><div class="cs-label">Опт.заявок</div></div>
-              <div class="cs-item"><div class="cs-val">300+</div><div class="cs-label">Отгрузок</div></div>
+              <div class="cs-item"><div class="cs-val">11.8 млн</div><div class="cs-label" data-key="c_nts.s1">Просмотров</div></div>
+              <div class="cs-item"><div class="cs-val">700+</div><div class="cs-label" data-key="c_nts.s2">Опт.заявок</div></div>
+              <div class="cs-item"><div class="cs-val">300+</div><div class="cs-label" data-key="c_nts.s3">Отгрузок</div></div>
             </div>
           </div>
         </div>
@@ -944,12 +928,12 @@
           </div>
           <div class="case-body">
             <div class="case-client">IC CONSULTING</div>
-            <div class="case-title">Недвижимость Турция</div>
-            <p class="case-desc">Медиа-экосистема из 3 YouTube-каналов, закрывающая все боли экспатов. Личный бренд владельца как гарант надёжности. Трафик YT/IG/TG интегрирован в CRM.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">50 → 1000+ заявок/мес за 6 месяцев</span></p>
+            <div class="case-title" data-key="c_ic.title">Бизнес-консалтинг</div>
+            <p class="case-desc" data-key="c_ic.desc">Выстроили медиаприсутствие консалтинговой компании с нуля. Личный бренд основателя как главный актив доверия. Экспертный видеоконтент, кейсы клиентов, воронка через YouTube + Telegram.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">50 → 1000+ заявок/мес за 6 месяцев</span></p>
             <div class="case-stats">
-              <div class="cs-item"><div class="cs-val">47 млн</div><div class="cs-label">Охват</div></div>
-              <div class="cs-item"><div class="cs-val">1000+</div><div class="cs-label">Заявок/мес</div></div>
-              <div class="cs-item"><div class="cs-val">250+</div><div class="cs-label">Сделок</div></div>
+              <div class="cs-item"><div class="cs-val">47 млн</div><div class="cs-label" data-key="c_ic.s1">Охват</div></div>
+              <div class="cs-item"><div class="cs-val">1000+</div><div class="cs-label" data-key="c_ic.s2">Заявок/мес</div></div>
+              <div class="cs-item"><div class="cs-val">250+</div><div class="cs-label" data-key="c_ic.s3">Сделок</div></div>
             </div>
           </div>
         </div>
@@ -1130,7 +1114,7 @@
   <div class="container">
     <div class="footer-top">
       <div>
-        <div class="footer-logo">POLYAS<span>.</span>MEDIA</div>
+        <div class="footer-logo"><img src="assets/logo.svg" alt="POLYAS MEDIA" height="28" style="display:block;width:auto" onerror="this.outerHTML='POLYAS<span style=&quot;color:var(--lime)&quot;>.</span>MEDIA'"></div>
         <p class="footer-tagline" data-key="footer.tagline">Визуальный капитал для лидеров рынка. RU &amp; EN продакшн высшего уровня.</p>
         <div class="footer-social">
           <a href="https://www.youtube.com/@polyasmedia" target="_blank" class="footer-social-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span data-key="footer.yt">YouTube — Иван Исаков</span></a>
@@ -1263,6 +1247,13 @@ ru:{
   'cs.conversion':'Конверсия','cs.format':'Формат','cs.platform':'Платформа','cs.niche':'Ниша','cs.subs':'Подписчики',
   'c_serg.title':'Монтаж YouTube-канала о финансах','c_serg.desc':'Регулярный монтаж для финансового блогера — фондовый рынок, крипта, пассивный доход. Dynamic-монтаж, цветокоррекция, Sound Design.',
   'c_ru3.client':'RU Кейс','c_ru3.title':'Монтаж Reels и TG-видео','c_ru3.desc':'Регулярная поставка short-form контента для нишевого эксперта. Стабильный органический прирост аудитории.',
+  'c_ivan.client':'POLYAS MEDIA — Иван Исаков','c_ivan.title':'Авторский Showreel — Narrative & Dynamic','c_ivan.desc':'Личный стиль монтажа основателя: кинематографичный ритм, emotion-driven cuts, Sound Design под каждый кадр. 4+ года в продакшне для топ-инфлюенсеров RU и EN рынков.','c_ivan.s1':'лет опыта','c_ivan.s2':'форматы','c_ivan.s3':'рынки',
+  'c_martel.title':'VSL с высокой конверсией для YouTube-инфлюенсера','c_martel.desc':'@MindofMartel — 108K подписчиков. Ниша: мужской рост, сила, майндсет. Монтаж продающего VSL для коучинг-оффера — нарративная дуга, кинематографичный Sound Design, точный темп.','c_martel.s1':'Подписчики','c_martel.s2':'Формат',
+  'c_dudley.title':'VSL для мужского коучинга по идентичности','c_dudley.desc':'@DudleyJEdouard — 27K подписчиков. Помогает мужчинам преодолевать плато и строить идентичность. Монтаж конверсионного VSL с эмоциональной нарративной дугой.','c_dudley.s1':'Подписчики','c_dudley.s2':'Формат',
+  'c_donzel.title':'Мини-подкаст серия — запуск книги','c_donzel.desc':'Бывший топ-менеджер Fortune 500, основатель Destiny Development Delta™. Серия мини-подкастов по книге «Make Your Destiny Happen» — кинематографичный монтаж, фирменная моушн-графика.','c_donzel.s1':'Формат','c_donzel.s2':'Ниша',
+  'c_asic.title':'Оборудование для майнинга','c_asic.desc':'Пересобрали архитектуру позиционирования. Многоступенчатые воронки через экспертный контент (ROI оборудования), агрессивное SEO, связка Shorts + основной контент.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">31K → 3.9 млн охват за 8 месяцев</span>','c_asic.s1':'Охват','c_asic.s2':'Заявок/мес','c_asic.s3':'Продаж/мес',
+  'c_nts.title':'Оптовые автотовары','c_nts.desc':'Радикальная смена фокуса с розницы на бизнес-сегмент. Язык цифр — маржинальность, логистика. Воронка через бота с закрытым прайсом и мощный ретаргетинг.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">5 → 700+ B2B-заявок за 4 месяца</span>','c_nts.s1':'Просмотров','c_nts.s2':'Опт.заявок','c_nts.s3':'Отгрузок',
+  'c_ic.title':'Бизнес-консалтинг','c_ic.desc':'Выстроили медиаприсутствие консалтинговой компании с нуля. Личный бренд основателя как главный актив доверия. Экспертный видеоконтент, кейсы клиентов, воронка через YouTube + Telegram.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">50 → 1000+ заявок/мес за 6 месяцев</span>','c_ic.s1':'Охват','c_ic.s2':'Заявок/мес','c_ic.s3':'Сделок',
   'prod.note':'Продюсирование — это монтаж + дизайн + стратегия как единая система. Каждый кейс включает полный цикл: от концепта до финального рендера и аналитики.',
   'cp1.title':'Полный медиапродакшн для инфлюенсера','cp1.desc':'VSL-видео, thumbnails, брендинг канала. Единый визуальный язык для роста аудитории 108K.',
   'cs.subs2':'Подписчики','cs.cycle':'Цикл',
@@ -1340,6 +1331,13 @@ en:{
   'cs.conversion':'Conversion','cs.format':'Format','cs.platform':'Platform','cs.niche':'Niche','cs.subs':'Subscribers',
   'c_serg.title':'YouTube Finance Channel Editing','c_serg.desc':'Ongoing editing for a finance blogger — stock market, crypto, passive income. Dynamic editing, color grading, Sound Design per episode.',
   'c_ru3.client':'RU Case','c_ru3.title':'Reels & TG Video Editing','c_ru3.desc':'Regular short-form content delivery for a niche expert. Steady organic audience growth through editing quality.',
+  'c_ivan.client':'POLYAS MEDIA — Ivan Isakov','c_ivan.title':'Founder Showreel — Narrative & Dynamic','c_ivan.desc':'Personal editing style of the founder: cinematic rhythm, emotion-driven cuts, Sound Design for every frame. 4+ years producing content for top influencers in RU & EN markets.','c_ivan.s1':'yrs exp','c_ivan.s2':'formats','c_ivan.s3':'markets',
+  'c_martel.title':'High-Converting VSL for YouTube Influencer','c_martel.desc':'@MindofMartel — 108K subscribers. Niche: masculine growth, strength, mindset. Edited a sales VSL for his coaching offer — narrative arc, cinematic Sound Design, precision pacing.','c_martel.s1':'Subscribers','c_martel.s2':'Format',
+  'c_dudley.title':"VSL for Men's Identity Coaching",'c_dudley.desc':'@DudleyJEdouard — 27K subscribers. Helping men break plateaus & refine identity. Edited a high-converting VSL ad for his coaching program with emotional narrative arc and professional pacing.','c_dudley.s1':'Subscribers','c_dudley.s2':'Format',
+  'c_donzel.title':'Mini-Podcast Series — Book Launch','c_donzel.desc':'Former Fortune 500 executive, Founder of Destiny Development Delta™. Edited a series of mini-podcast episodes based on his book "Make Your Destiny Happen" — cinematic cuts, branded motion graphics.','c_donzel.s1':'Format','c_donzel.s2':'Niche',
+  'c_asic.title':'Mining Equipment','c_asic.desc':'Rebuilt the positioning architecture. Multi-step funnels via expert content (equipment ROI), aggressive SEO, Shorts + main content pairing.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">RESULT —</strong> <span style="color:var(--fg-2);font-size:13px">31K → 3.9M reach in 8 months</span>','c_asic.s1':'Reach','c_asic.s2':'Leads/mo','c_asic.s3':'Sales/mo',
+  'c_nts.title':'Wholesale Auto Parts','c_nts.desc':'Radical pivot from retail to B2B segment. Language of numbers — margins, logistics. Funnel through a bot with a closed price list and aggressive retargeting.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">RESULT —</strong> <span style="color:var(--fg-2);font-size:13px">5 → 700+ B2B leads in 4 months</span>','c_nts.s1':'Views','c_nts.s2':'Wholesale leads','c_nts.s3':'Shipments',
+  'c_ic.title':'Business Consulting','c_ic.desc':'Built the media presence of a consulting firm from scratch. Founder personal brand as the core trust asset. Expert video content, client cases, funnel through YouTube + Telegram.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">RESULT —</strong> <span style="color:var(--fg-2);font-size:13px">50 → 1000+ leads/mo in 6 months</span>','c_ic.s1':'Reach','c_ic.s2':'Leads/mo','c_ic.s3':'Deals',
   'prod.note':'Production = editing + design + strategy as one unified system. Every production case includes a full cycle: from concept to final render and analytics.',
   'cp1.title':'Full Media Production for Influencer','cp1.desc':'VSL video, thumbnails, channel branding. Unified visual language for 108K audience growth.',
   'cs.subs2':'Subscribers','cs.cycle':'Cycle',
@@ -1371,7 +1369,7 @@ function setLang(lang){
   document.documentElement.lang=lang;
   document.querySelectorAll('[data-key]').forEach(el=>{
     const v=i18n[lang][el.dataset.key];
-    if(v!==undefined) el.textContent=v;
+    if(v!==undefined){if(v.indexOf('<')!==-1)el.innerHTML=v;else el.textContent=v;}
   });
   document.querySelectorAll('[data-ph-ru]').forEach(el=>{
     el.placeholder=lang==='ru'?el.dataset.phRu:el.dataset.phEn;
@@ -1389,6 +1387,7 @@ const ro=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});
 },{threshold:0.08});
 document.querySelectorAll('.r').forEach(el=>ro.observe(el));
+document.querySelectorAll('.case-card').forEach((el,i)=>{el.style.transitionDelay=(i%3*0.1)+"s";ro.observe(el);});
 
 /* PROCESS TABS */
 const stepBtns=Array.from(document.querySelectorAll('.step-btn'));
@@ -1591,7 +1590,7 @@ document.querySelectorAll('.btn-solid,.btn-lime').forEach(btn=>{
 /* VIDEO MODAL */
 (function(){
   // Modal HTML injected inline so it's always in DOM
-  var modalHTML='<div id="videoModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px"><div class="vm-wrap" style="position:relative;width:100%;max-width:960px;background:#0d0d0d;border-radius:16px;overflow:hidden;border:1px solid rgba(57,255,20,0.15);box-shadow:0 0 80px rgba(57,255,20,0.08),0 32px 80px rgba(0,0,0,0.8);animation:vmIn .3s cubic-bezier(.22,.68,0,1.2) both"><button id="vmClose" style="position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10">✕</button><video id="vmPlayer" controls playsinline preload="none" style="width:100%;display:block;max-height:80vh;background:#000"></video></div></div>';
+  var modalHTML='<div id="videoModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px"><div class="vm-wrap" style="position:relative;width:100%;max-width:960px;background:#0d0d0d;border-radius:16px;overflow:hidden;border:1px solid rgba(57,255,20,0.15);box-shadow:0 0 80px rgba(57,255,20,0.08),0 32px 80px rgba(0,0,0,0.8);animation:vmIn .3s cubic-bezier(.22,.68,0,1.2) both"><button id="vmClose" style="position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10">✕</button><video id="vmPlayer" controls playsinline preload="none" style="width:100%;display:block;max-height:80vh;background:#000"></video><div style="position:absolute;bottom:56px;left:16px;z-index:20;pointer-events:none;opacity:0.7"><img src=\"assets/logo.svg\" alt=\"POLYAS MEDIA\" style=\"height:16px;width:auto\" onerror=\"this.outerHTML='<span style=\\&quot;font-family:Unbounded,sans-serif;font-size:10px;font-weight:900;color:#fff;letter-spacing:.04em\\&quot;>POLYAS<span style=\\&quot;color:#39FF14\\&quot;>.</span>MEDIA</span>'\"></div></div></div>';
   document.body.insertAdjacentHTML('beforeend', modalHTML);
   var modal=document.getElementById('videoModal');
   var player=document.getElementById('vmPlayer');
