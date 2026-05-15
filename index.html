@@ -193,8 +193,8 @@
   .case-thumb{width:100%;aspect-ratio:16/9;background:var(--bg-2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
   .case-thumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
   .case-thumb-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(57,255,20,0.06) 0%,transparent 55%),repeating-linear-gradient(90deg,transparent 0px,transparent 19px,rgba(57,255,20,0.022) 19px,rgba(57,255,20,0.022) 20px)}
-  .case-play{width:54px;height:54px;border-radius:50%;background:rgba(57,255,20,0.1);border:1.5px solid rgba(57,255,20,0.4);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;transition:all .3s var(--ease);box-shadow:0 0 20px rgba(57,255,20,0.14)}
-  .case-card:hover .case-play{background:rgba(57,255,20,0.2);box-shadow:0 0 36px rgba(57,255,20,0.36);transform:scale(1.1)}
+  .case-play{width:54px;height:54px;border-radius:50%;background:rgba(57,255,20,0.1);border:1.5px solid rgba(57,255,20,0.4);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;transition:all .35s var(--ease);box-shadow:0 0 20px rgba(57,255,20,0.14);opacity:0;transform:scale(0.7)}
+  .case-card:hover .case-play{background:rgba(57,255,20,0.2);box-shadow:0 0 36px rgba(57,255,20,0.36);opacity:1;transform:scale(1.1)}
   .case-play svg{width:18px;height:18px;margin-left:3px;color:var(--lime)}
   .case-type-tag{position:absolute;bottom:10px;left:10px;z-index:1;font-family:"Unbounded",sans-serif;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);background:rgba(0,0,0,0.8);border:1px solid rgba(57,255,20,0.2);padding:4px 10px;border-radius:100px}
   .case-body{padding:26px}
@@ -278,7 +278,59 @@
   .footer-copy{font-size:11px;color:var(--fg-3)}
   .footer-made{font-size:11px;color:var(--fg-4);letter-spacing:.04em}
   @media(max-width:1024px){.services-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.team-grid{grid-template-columns:repeat(3,1fr)}.about-grid{grid-template-columns:1fr;gap:48px}.about-grid>*:nth-child(2){max-width:440px;margin:0 auto;width:100%}.footer-top{grid-template-columns:1fr 1fr}.cases-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:768px){.container{padding:0 20px}section{padding:80px 0}.services-grid,.pricing-grid,.cases-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.process-steps{flex-wrap:wrap}.step-btn{min-width:calc(50% - 1px);border-bottom:1px solid rgba(57,255,20,0.07)}.process-panel{padding:32px 28px}.panel-bg-num{font-size:60px;right:20px}.contact-box{padding:48px 28px}.form-row{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.hero-inner{padding:80px 0 60px}.cases-tabs{flex-wrap:wrap;border-radius:var(--r-md)}.cases-tab{padding:8px 18px}}
+  @media(max-width:768px){
+    .container{padding:0 16px}
+    section{padding:72px 0}
+    .services-grid,.pricing-grid,.cases-grid{grid-template-columns:1fr}
+    .team-grid{grid-template-columns:1fr 1fr}
+    .nav-links{display:none}
+    .process-steps{flex-wrap:wrap}
+    .step-btn{min-width:calc(50% - 1px);border-bottom:1px solid rgba(57,255,20,0.07)}
+    .process-panel{padding:28px 20px}
+    .panel-bg-num{font-size:60px;right:20px}
+    .contact-box{padding:36px 20px}
+    .form-row{grid-template-columns:1fr}
+    .footer-top{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .hero-inner{padding:72px 0 52px}
+    .cases-tabs{flex-wrap:wrap;border-radius:var(--r-md)}
+    .cases-tab{padding:8px 14px;font-size:9px}
+    h1,.hero-h{font-size:clamp(36px,10vw,56px) !important}
+    h2{font-size:clamp(28px,8vw,44px) !important}
+    .about-grid{grid-template-columns:1fr}
+    .about-facts{grid-template-columns:1fr 1fr}
+    .founder-card{max-width:100%}
+    .svc-card{padding:28px 24px}
+    .pricing-card{padding:32px 24px}
+    .price-amount{font-size:28px}
+    .cases-grid{gap:16px}
+    .case-thumb{height:200px}
+    .case-body{padding:20px}
+    #panel-design .thumb-item{width:220px;height:124px}
+    .team-grid{gap:16px}
+    .team-card{padding:20px 16px}
+    .section-header{margin-bottom:48px}
+    .cases-tabs{gap:4px}
+    .footer-top{gap:40px}
+    .hero-btns{flex-wrap:wrap;gap:12px}
+    .hero-btns .btn{width:100%;justify-content:center}
+    .stat-row{flex-wrap:wrap;gap:24px}
+    .stat-item{min-width:calc(50% - 12px)}
+    #vmPlayer{max-height:60vh}
+    .vm-wrap{border-radius:12px}
+  }
+  @media(max-width:480px){
+    .container{padding:0 14px}
+    .hero-h{font-size:32px !important}
+    .cases-tab{padding:7px 10px;font-size:8px}
+    .case-thumb{height:180px}
+    .about-facts{grid-template-columns:1fr 1fr}
+    .about-fact-num{font-size:36px}
+    .pricing-grid{gap:16px}
+    .services-grid{gap:16px}
+    .svc-stats-row,.svc-stats-row>div{font-size:10px}
+    .footer-social-btn{font-size:9px}
+  }
   @media(max-width:480px){.team-grid{grid-template-columns:1fr}.hero-cta{flex-direction:column;align-items:stretch}.btn{justify-content:center}.hero-stats{flex-direction:column}.stat-item{min-width:100%;border-right:none;border-bottom:1px solid rgba(57,255,20,0.07)}.stat-item:last-child{border-bottom:none}}
 
   /* ── VIDEO MODAL ── */
@@ -341,11 +393,11 @@
   /* Design carousel: centered, larger thumbs, edge fades */
   #panel-design .design-panel{padding:0}
   #panel-design .thumb-carousel-wrap{max-width:960px;margin:0 auto;overflow:visible;border-radius:var(--r-lg);position:relative}
-  #panel-design .thumb-carousel-inner{overflow:hidden;border-radius:var(--r-lg);padding:14px 0}
+  #panel-design .thumb-carousel-inner{overflow:hidden;border-radius:var(--r-lg);padding:18px 0;margin:-18px 0}
   #panel-design .thumb-carousel-wrap::before,#panel-design .thumb-carousel-wrap::after{display:block !important;content:"";position:absolute;top:0;bottom:0;width:140px;z-index:4;pointer-events:none}
   #panel-design .thumb-carousel-wrap::before{left:0;background:linear-gradient(to right,#111111 0%,#111111 20%,transparent 100%)}
   #panel-design .thumb-carousel-wrap::after{right:0;background:linear-gradient(to left,#111111 0%,#111111 20%,transparent 100%)}
-  #panel-design .thumb-item{width:300px;height:169px;border-radius:var(--r-md)}
+  #panel-design .thumb-item{width:300px;height:169px;border-radius:var(--r-md);border:none;box-shadow:none}
   </style>
 </head>
 <body>
@@ -714,7 +766,7 @@
         <div class="case-card" data-video="assets/videos/reel-lavanta.mp4">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <img src="assets/clients/lavanta-ride.jpg" alt="Lavanta Ride" onerror="this.style.display='none'"/>
+            <img src="assets/cases/thumb-lavanta.jpg" alt="Lavanta Ride" onerror="this.src='assets/clients/lavanta-ride.jpg'"/>
             <div class="case-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
             <div class="case-type-tag">VSL</div>
           </div>
@@ -750,7 +802,7 @@
         <div class="case-card" data-video="assets/videos/reel-polyas.mp4">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <img src="assets/photos/founder-ivan.jpg" alt="Polyas Media" style="object-position:center 15%" onerror="this.style.display='none'"/>
+            <img src="assets/cases/thumb-polyas.jpg" alt="Polyas Media" style="object-position:center top" onerror="this.src='assets/photos/founder-ivan.jpg'"/>
             <div class="case-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
             <div class="case-type-tag">Showreel</div>
           </div>
@@ -772,14 +824,14 @@
         <div class="case-card" data-video="assets/videos/reel-martel.mp4">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <img src="assets/clients/martel-metellus.jpg" style="object-position:center 10%" alt="Martel Metellus" onerror="this.style.display='none'"/>
+            <img src="assets/cases/thumb-martel.jpg" alt="Martel Metellus" style="object-position:center top" onerror="this.src='assets/clients/martel-metellus.jpg'"/>
             <div class="case-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
             <div class="case-type-tag">VSL Ad</div>
           </div>
           <div class="case-body">
             <div class="case-client">Martel Metellus — 108K YT</div>
-            <div class="case-title">Продающий VSL для YouTube-инфлюенсера</div>
-            <p class="case-desc">@MindofMartel — 108K подписчиков, ниша: мужской рост, сила, психология. Смонтировали продающий рекламный VSL для его оффера. Narrative-монтаж, кинематографичный Sound Design.</p>
+            <div class="case-title">High-Converting VSL for YouTube Influencer</div>
+            <p class="case-desc">@MindofMartel — 108K subscribers. Niche: masculine growth, strength, mindset. Edited a sales VSL for his coaching offer — narrative arc, cinematic Sound Design, precision pacing.</p>
             <div class="case-stats">
               <div class="cs-item"><div class="cs-val">108K</div><div class="cs-label">Subscribers</div></div>
               <div class="cs-item"><div class="cs-val">VSL Ad</div><div class="cs-label">Format</div></div>
@@ -790,7 +842,7 @@
         <div class="case-card" data-video="assets/videos/reel-dudley.mp4">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <img src="assets/clients/dudley-edouard.jpg" alt="Dudley Edouard" onerror="this.style.display='none'"/>
+            <img src="assets/cases/thumb-dudley.jpg" alt="Dudley Edouard" style="object-position:center top" onerror="this.src='assets/clients/dudley-edouard.jpg'"/>
             <div class="case-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
             <div class="case-type-tag">VSL Ad</div>
           </div>
@@ -808,7 +860,7 @@
         <div class="case-card" data-video="assets/videos/reel-donzel.mp4">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <img src="assets/clients/donzel-leggett.jpg" alt="Donzel Leggett" onerror="this.style.display='none'"/>
+            <img src="assets/cases/thumb-donzel.jpg" alt="Donzel Leggett" style="object-position:center top" onerror="this.src='assets/clients/donzel-leggett.jpg'"/>
             <div class="case-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
             <div class="case-type-tag">Podcast Series</div>
           </div>
@@ -819,6 +871,24 @@
             <div class="case-stats">
               <div class="cs-item"><div class="cs-val">Series</div><div class="cs-label">Format</div></div>
               <div class="cs-item"><div class="cs-val">Executive</div><div class="cs-label">Niche</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="case-card" data-video="assets/videos/reel-polyas.mp4">
+          <div class="case-thumb">
+            <div class="case-thumb-bg"></div>
+            <img src="assets/cases/thumb-polyas.jpg" alt="Ivan Isakov" style="object-position:center top" onerror="this.src='assets/photos/founder-ivan.jpg'"/>
+            <div class="case-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="case-type-tag">Showreel</div>
+          </div>
+          <div class="case-body">
+            <div class="case-client">POLYAS MEDIA — Ivan Isakov</div>
+            <div class="case-title">Founder Showreel — Narrative & Dynamic</div>
+            <p class="case-desc">Personal editing style of the founder: cinematic rhythm, emotion-driven cuts, Sound Design for every frame. 4+ years producing content for top influencers in RU & EN markets.</p>
+            <div class="case-stats">
+              <div class="cs-item"><div class="cs-val">4+</div><div class="cs-label">yrs exp</div></div>
+              <div class="cs-item"><div class="cs-val">YT · VSL</div><div class="cs-label">formats</div></div>
+              <div class="cs-item"><div class="cs-val">RU · EN</div><div class="cs-label">markets</div></div>
             </div>
           </div>
         </div>
@@ -833,13 +903,13 @@
         <div class="case-card">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <img src="assets/cases/case-prod-1.jpg" alt="GET ASIC" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center" onerror="this.style.display='none'"/><div style="position:absolute;inset:0;background:linear-gradient(135deg,#0a1a0a 0%,#0f2a0f 40%,#162216 100%);display:flex;align-items:center;justify-content:center;z-index:0"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">GET ASIC</span></div>
+            <img src="assets/cases/case-prod-1.jpg" alt="GET ASIC" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2" onerror="this.style.display='none'"/><div style="position:absolute;inset:0;background:linear-gradient(135deg,#0a1a0a 0%,#0f2a0f 40%,#162216 100%);display:flex;align-items:center;justify-content:center;z-index:0"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">GET ASIC</span></div>
             <div class="case-type-tag">YouTube + Shorts</div>
           </div>
           <div class="case-body">
             <div class="case-client">GET ASIC</div>
-            <div class="case-title">Оборудование для майнинга — 31K → 3.9 млн охват</div>
-            <p class="case-desc">Пересобрали архитектуру позиционирования. Многоступенчатые воронки через экспертный контент (ROI оборудования), агрессивное SEO, связка Shorts + основной контент.</p>
+            <div class="case-title">Оборудование для майнинга</div>
+            <p class="case-desc">Пересобрали архитектуру позиционирования. Многоступенчатые воронки через экспертный контент (ROI оборудования), агрессивное SEO, связка Shorts + основной контент.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">31K → 3.9 млн охват за 8 месяцев</span></p>
             <div class="case-stats">
               <div class="cs-item"><div class="cs-val">3.9 млн</div><div class="cs-label">Охват</div></div>
               <div class="cs-item"><div class="cs-val">100+</div><div class="cs-label">Заявок/мес</div></div>
@@ -851,13 +921,13 @@
         <div class="case-card">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <img src="assets/cases/case-prod-2.jpg" alt="NTS AUTO" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1" onerror="this.style.display='none'"/><div style="position:absolute;inset:0;background:linear-gradient(135deg,#0f0f1a 0%,#141428 40%,#0a0a14 100%);display:flex;align-items:center;justify-content:center;z-index:0"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">NTS AUTO</span></div>
+            <img src="assets/cases/case-prod-2.jpg" alt="NTS AUTO" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2" onerror="this.style.display='none'"/><div style="position:absolute;inset:0;background:linear-gradient(135deg,#0f0f1a 0%,#141428 40%,#0a0a14 100%);display:flex;align-items:center;justify-content:center;z-index:0"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">NTS AUTO</span></div>
             <div class="case-type-tag">B2B Funnel</div>
           </div>
           <div class="case-body">
             <div class="case-client">NTS AUTO</div>
-            <div class="case-title">Оптовые автотовары — 5 → 700+ B2B-заявок</div>
-            <p class="case-desc">Радикальная смена фокуса с розницы на бизнес-сегмент. Язык цифр — маржинальность, логистика. Воронка через бота с закрытым прайсом и мощный ретаргетинг.</p>
+            <div class="case-title">Оптовые автотовары</div>
+            <p class="case-desc">Радикальная смена фокуса с розницы на бизнес-сегмент. Язык цифр — маржинальность, логистика. Воронка через бота с закрытым прайсом и мощный ретаргетинг.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">5 → 700+ B2B-заявок за 4 месяца</span></p>
             <div class="case-stats">
               <div class="cs-item"><div class="cs-val">11.8 млн</div><div class="cs-label">Просмотров</div></div>
               <div class="cs-item"><div class="cs-val">700+</div><div class="cs-label">Опт.заявок</div></div>
@@ -869,13 +939,13 @@
         <div class="case-card">
           <div class="case-thumb">
             <div class="case-thumb-bg"></div>
-            <img src="assets/cases/case-prod-3.jpg" alt="IC Consulting" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1" onerror="this.style.display='none'"/><div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a0f0a 0%,#281a0f 40%,#140a0a 100%);display:flex;align-items:center;justify-content:center;z-index:0"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">IC CONSULTING</span></div>
+            <img src="assets/cases/case-prod-3.jpg" alt="IC Consulting" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2" onerror="this.style.display='none'"/><div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a0f0a 0%,#281a0f 40%,#140a0a 100%);display:flex;align-items:center;justify-content:center;z-index:0"><span style="font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.2em;color:rgba(57,255,20,0.5)">IC CONSULTING</span></div>
             <div class="case-type-tag">Media Ecosystem</div>
           </div>
           <div class="case-body">
             <div class="case-client">IC CONSULTING</div>
-            <div class="case-title">Недвижимость Турция — 50 → 1000+ заявок/мес</div>
-            <p class="case-desc">Медиа-экосистема из 3 YouTube-каналов, закрывающая все боли экспатов. Личный бренд владельца как гарант надёжности. Трафик YT/IG/TG интегрирован в CRM.</p>
+            <div class="case-title">Недвижимость Турция</div>
+            <p class="case-desc">Медиа-экосистема из 3 YouTube-каналов, закрывающая все боли экспатов. Личный бренд владельца как гарант надёжности. Трафик YT/IG/TG интегрирован в CRM.<br><br><strong style="color:var(--lime);font-size:12px;letter-spacing:.06em">РЕЗУЛЬТАТ —</strong> <span style="color:var(--fg-2);font-size:13px">50 → 1000+ заявок/мес за 6 месяцев</span></p>
             <div class="case-stats">
               <div class="cs-item"><div class="cs-val">47 млн</div><div class="cs-label">Охват</div></div>
               <div class="cs-item"><div class="cs-val">1000+</div><div class="cs-label">Заявок/мес</div></div>
@@ -890,7 +960,7 @@
     <!-- ── ДИЗАЙН ── -->
     <div class="cases-panel" id="panel-design">
       <div class="design-panel">
-        <p class="design-label" data-key="design.note">10 обложек из нашего портфолио — каждая оптимизирована под CTR. Добавьте свои превью в папку assets/thumbnails/ чтобы отобразились здесь.</p>
+        <p class="design-label" data-key="design.note">Обложка — это первые 0.3 секунды. Мы создаём превью, которые увеличивают CTR, упаковывают продукт и формируют нужное впечатление с первого взгляда. Каждый дизайн — это конверсия, встроенная в визуал.</p>
         <div class="thumb-carousel-wrap" style="border-radius:var(--r-lg)">
           <div class="thumb-carousel-inner">
           <div class="thumb-track">
@@ -1063,7 +1133,7 @@
         <div class="footer-logo">POLYAS<span>.</span>MEDIA</div>
         <p class="footer-tagline" data-key="footer.tagline">Визуальный капитал для лидеров рынка. RU &amp; EN продакшн высшего уровня.</p>
         <div class="footer-social">
-          <a href="https://www.youtube.com/@polyasmedia" target="_blank" class="footer-social-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span>YouTube — Иван Исаков</span></a>
+          <a href="https://www.youtube.com/@polyasmedia" target="_blank" class="footer-social-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span data-key="footer.yt">YouTube — Иван Исаков</span></a>
           <a href="https://t.me/mediapolyas" target="_blank" class="footer-social-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.606c-.15.68-.543.847-1.1.527l-3.03-2.233-1.462 1.407c-.162.162-.297.297-.608.297l.216-3.065 5.579-5.036c.243-.216-.053-.334-.375-.118L7.28 14.04l-2.97-.928c-.645-.203-.657-.645.135-.953l11.595-4.47c.537-.197 1.007.13.522.56z"/></svg><span data-key="footer.tg">Telegram-канал</span></a>
           <a href="https://t.me/polyasmedia" target="_blank" class="footer-social-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.606c-.15.68-.543.847-1.1.527l-3.03-2.233-1.462 1.407c-.162.162-.297.297-.608.297l.216-3.065 5.579-5.036c.243-.216-.053-.334-.375-.118L7.28 14.04l-2.97-.928c-.645-.203-.657-.645.135-.953l11.595-4.47c.537-.197 1.007.13.522.56z"/></svg><span data-key="footer.dm">Написать Ивану</span></a>
         </div>
@@ -1200,7 +1270,7 @@ ru:{
   'cs.niche2':'Ниша','cs.conv2':'Конверсия',
   'cp3.client':'@mukhomedzyanov','cp3.title':'Канал под ключ — финансы и крипта','cp3.desc':'Постоянное сопровождение финансового канала: монтаж выпусков, thumbnails, Shorts. Полный цикл без участия автора.',
   'cs.plat2':'Платформа','cs.cyc2':'Цикл',
-  'design.note':'10 обложек из нашего портфолио — каждая оптимизирована под CTR. Добавьте свои превью в папку assets/thumbnails/ чтобы отобразились здесь.',
+  'design.note':'Обложка — это первые 0.3 секунды. Мы создаём превью, которые увеличивают CTR, упаковывают продукт и формируют нужное впечатление с первого взгляда. Каждый дизайн — это конверсия, встроенная в визуал.',
   'team.chip':'Команда','team.h2':'Люди за результатом','team.sub':'Специалисты с опытом в топовых продакшн-студиях.',
   'tm1.role':'CEO / Founder','tm1.desc':'Основатель, медиа-продюсер. Стратегия, клиенты, финальный контроль качества.',
   'tm2.role':'Lead Editor','tm2.name':'Монтажёр','tm2.desc':'Senior-монтаж, цветокоррекция, motion. 6+ лет в продакшне для YouTube.',
@@ -1214,7 +1284,7 @@ ru:{
   'form.disclaimer':'Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Мы не спамим.',
   'form.ok_title':'Заявка принята','form.ok_body':'Мы получили вашу заявку и свяжемся в течение 2 часов. Ожидайте сообщение в Telegram.',
   'footer.tagline':'Визуальный капитал для лидеров рынка. RU & EN продакшн высшего уровня.',
-  'footer.tg':'Telegram-канал','footer.nav_title':'Навигация','footer.ch_title':'Каналы основателя','footer.dm':'Написать Ивану','footer.rights':'Все права защищены.'
+  'footer.yt':'YouTube — Иван Исаков','footer.tg':'Telegram-канал','footer.nav_title':'Навигация','footer.ch_title':'Каналы основателя','footer.dm':'Написать Ивану','footer.rights':'Все права защищены.'
 },
 en:{
   'nav.about':'About','nav.services':'Services','nav.pricing':'Pricing',
@@ -1291,7 +1361,7 @@ en:{
   'form.disclaimer':'By clicking, you agree to personal data processing. No spam.',
   'form.ok_title':'Request Received','form.ok_body':'We got your request and will reach out within 2 hours via Telegram.',
   'footer.tagline':'Visual capital for market leaders. RU & EN premium production.',
-  'footer.tg':'Telegram channel','footer.nav_title':'Navigation','footer.ch_title':'Founder channels','footer.dm':'Message Ivan','footer.rights':'All rights reserved.'
+  'footer.yt':'YouTube — Ivan Isakov','footer.tg':'Telegram channel','footer.nav_title':'Navigation','footer.ch_title':'Founder channels','footer.dm':'Message Ivan','footer.rights':'All rights reserved.'
 }};
 
 let currentLang='ru';
