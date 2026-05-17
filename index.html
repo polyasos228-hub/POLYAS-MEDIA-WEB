@@ -256,6 +256,17 @@
   .cs-option.selected{color:var(--lime);background:rgba(57,255,20,0.05);border-left-color:var(--lime)}
   .form-submit-wrap{display:flex;justify-content:center;margin-top:8px}
   .form-disclaimer{font-size:11px;color:var(--fg-3);text-align:center;margin-top:14px}
+  /* Form micro-interactions */
+  .form-field{position:relative}
+  .form-input:focus + .field-glow{opacity:1}
+  .field-glow{position:absolute;inset:-1px;border-radius:var(--r-md);pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(57,255,20,0.06) 0%,transparent 70%)}
+  .char-counter{position:absolute;bottom:10px;right:14px;font-size:10px;color:var(--fg-3);letter-spacing:.04em;transition:color .2s;pointer-events:none}
+  .char-counter.warn{color:rgba(57,255,20,0.55)}
+  .char-counter.ok{color:var(--lime)}
+  .btn-progress{position:absolute;bottom:0;left:0;height:2px;background:var(--lime);border-radius:0 0 100px 100px;width:0%;transition:width .4s var(--ease);box-shadow:0 0 8px var(--lime)}
+  #submitBtn{position:relative;overflow:hidden}
+  @keyframes btnShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-5px)}40%{transform:translateX(5px)}60%{transform:translateX(-3px)}80%{transform:translateX(3px)}}
+  .form-input.error-shake{animation:btnShake .4s var(--ease)}
   .form-success{display:none;flex-direction:column;align-items:center;gap:14px;padding:40px 20px}
   .form-success.show{display:flex}
   .success-icon{width:64px;height:64px;border-radius:50%;background:rgba(57,255,20,0.08);border:1.5px solid var(--lime);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 0 28px rgba(57,255,20,0.2)}
@@ -460,6 +471,7 @@
       </h1>
       <p class="hero-sub r r-d2" data-key="hero.sub">Высокоуровневый продакшн для лидеров ниш: Web3, Криптовалюта, Трейдинг, Недвижимость, Медицина</p>
       <div class="hero-cta r r-d3">
+        <button class="btn btn-solid" id="heroShowreelBtn" style="gap:12px"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M8 5v14l11-7z"/></svg><span data-key="btn.showreel">Смотреть Showreel</span></button>
         <a href="https://t.me/mediapolyas" target="_blank" class="btn btn-lime"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.606c-.15.68-.543.847-1.1.527l-3.03-2.233-1.462 1.407c-.162.162-.297.297-.608.297l.216-3.065 5.579-5.036c.243-.216-.053-.334-.375-.118L7.28 14.04l-2.97-.928c-.645-.203-.657-.645.135-.953l11.595-4.47c.537-.197 1.007.13.522.56z"/></svg><span data-key="btn.tg">Telegram</span></a>
         <a href="https://www.youtube.com/@polyasmedia" target="_blank" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span data-key="btn.yt">YouTube</span></a>
       </div>
@@ -478,11 +490,11 @@
     <div class="about-grid">
       <div class="r">
         <span class="chip about-chip"><span class="chip-dot"></span><span data-key="about.chip">О компании</span></span>
-        <p class="about-statement" data-key="about.statement">Таргет и контекстная реклама сегодня — это слив бюджета</p>
+        <p class="about-statement" data-key="about.statement">Meta и Google заблокировали крипту. Таргет больше не работает.</p>
         <div class="about-body">
-          <p data-key="about.p1">В 2026 году средний пользователь видит более 6 000 рекламных сообщений в день. Баннеры, таргет, контекст — всё это давно стало «белым шумом». Аудитория выработала иммунитет и перестала реагировать.</p>
-          <p data-key="about.p2">Единственный формат, который работает — <strong style="color:var(--fg)">VSL (Video Sales Letter)</strong> и премиальный контент, создающий доверие. Контент, который не выглядит как реклама. Который притягивает тёплых клиентов органически — без агрессивного CPA и слитых бюджетов.</p>
-          <p data-key="about.p3">Именно это мы строим для наших клиентов в Web3, Трейдинге, Недвижимости и Медицине.</p>
+          <p data-key="about.p1">Web3, Crypto, iGaming — три самые прибыльные ниши в 2026 году. И одновременно три ниши, которые Meta, Google и YouTube заблокировали на уровне рекламного кабинета. Таргет умер. Контекст на вас не работает.</p>
+          <p data-key="about.p2">Единственный масштабируемый канал — <strong style="color:var(--fg)">органический видеоконтент и VSL</strong>. Контент, который не задерживает алгоритм. Который строит доверие за 60 секунд, конвертирует холодную аудиторию и работает без рекламного бюджета 24/7.</p>
+          <p data-key="about.p3">За 4 года мы выстроили систему, которая даёт клиентам из Web3, Крипты, Трейдинга и Недвижимости <strong style="color:var(--lime)">×4.2 ROI</strong> относительно любого paid-канала.</p>
         </div>
         <div class="about-facts">
           <div>
@@ -739,19 +751,19 @@
       <div class="price-card r r-d3">
         <div class="price-badge">03 — Full Cycle</div>
         <div class="price-service" data-key="pc3.name">Продюсирование</div>
-        <p class="price-tagline" data-key="pc3.tagline">Медиаинфраструктура под ключ: дизайн + монтаж + стратегия.</p>
-        <div class="price-amount" data-key="pc3.price">от $1 000</div>
-        <div class="price-period" data-key="pc3.period">в месяц</div>
+        <p class="price-tagline" data-key="pc3.tagline">Полная медиаинфраструктура. Индивидуальный формат под ваш масштаб.</p>
+        <div class="price-amount" data-key="pc3.price">от $3 000</div>
+        <div class="price-period" data-key="pc3.period">/ мес — Bespoke</div>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li data-key="pc3.f1">Контент-стратегия и сценарии</li>
+          <li data-key="pc3.f1">Контент-стратегия и VSL-сценарии</li>
           <li data-key="pc3.f2">Дизайн + монтаж в едином стиле</li>
-          <li data-key="pc3.f3">Организация съёмок</li>
-          <li data-key="pc3.f4">Команда под ключ</li>
+          <li data-key="pc3.f3">Организация съёмок и команда</li>
+          <li data-key="pc3.f4">KPI-отчётность и аналитика</li>
           <li data-key="pc3.f5">Только 4 часа вашего времени</li>
-          <li data-key="pc3.f6">Выделенный менеджер</li>
+          <li data-key="pc3.f6">Прямой доступ к основателю</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost btn-full" data-key="pc3.btn">Обсудить формат</a>
+        <a href="https://t.me/polyasmedia" target="_blank" class="btn btn-lime btn-full" data-key="pc3.btn">Bespoke Inquiry →</a>
       </div>
 
     </div>
@@ -1224,13 +1236,13 @@ ru:{
   'hero.tag':'Полный цикл медиапроизводства',
   'hero.line1':'Визуальный капитал','hero.line2':'для бизнеса',
   'hero.sub':'Высокоуровневый продакшн для лидеров ниш: Web3, Криптовалюта, Трейдинг, Недвижимость, Медицина',
-  'btn.tg':'Telegram','btn.yt':'YouTube',
+  'btn.showreel':'Смотреть Showreel','btn.tg':'Telegram','btn.yt':'YouTube',
   'stat.markets':'Рынки','stat.views':'Просмотров','stat.exp':'В индустрии','stat.views_val':'300 млн+','stat.exp_val':'4+ лет','founder.name':'Иван Исаков',
   'about.chip':'О компании',
-  'about.statement':'Таргет и контекстная реклама сегодня — это слив бюджета',
-  'about.p1':'В 2026 году средний пользователь видит более 6 000 рекламных сообщений в день. Баннеры, таргет, контекст — всё это давно стало «белым шумом». Аудитория выработала иммунитет и перестала реагировать.',
-  'about.p2':'Единственный формат, который работает — VSL (Video Sales Letter) и премиальный контент, создающий доверие. Контент, который не выглядит как реклама. Который притягивает тёплых клиентов органически.',
-  'about.p3':'Именно это мы строим для наших клиентов в Web3, Трейдинге, Недвижимости и Медицине.',
+  'about.statement':'Meta и Google заблокировали крипту. Таргет больше не работает.',
+  'about.p1':'Web3, Crypto, iGaming — три самые прибыльные ниши в 2026 году. И одновременно три ниши, которые Meta, Google и YouTube заблокировали на уровне рекламного кабинета. Таргет умер. Контекст на вас не работает.',
+  'about.p2':'Единственный масштабируемый канал — органический видеоконтент и VSL. Контент, который не задерживает алгоритм. Который строит доверие за 60 секунд, конвертирует холодную аудиторию и работает без рекламного бюджета 24/7.',
+  'about.p3':'За 4 года мы выстроили систему, которая даёт клиентам из Web3, Крипты, Трейдинга и Недвижимости ×4.2 ROI относительно любого paid-канала.',
   'fact.1':'рекламных сообщений в день видит ваш клиент',
   'fact.2':'аудитории игнорирует баннерную рекламу',
   'fact.3':'средний ROI VSL против таргета',
@@ -1263,8 +1275,8 @@ ru:{
   'pc1.f1':'Thumbnails и обложки','pc1.f2':'Брендинг и айдентика','pc1.f3':'Motion Graphics & интро','pc1.f4':'UI-графика для видео','pc1.f5':'До 3 правок включено','pc1.btn':'Обсудить проект',
   'pc2.name':'Монтаж','pc2.tagline':'Ритм и атмосфера, которые держат зрителя до конца.','pc2.price':'от $200','pc2.period':'за видео',
   'pc2.f1':'Narrative и dynamic-монтаж','pc2.f2':'Sound Design & озвучка','pc2.f3':'VFX и цветокоррекция','pc2.f4':'Адаптация под YT, Reels, TG','pc2.f5':'До 5 правок включено','pc2.f6':'Сроки: 5–7 рабочих дней','pc2.btn':'Оставить заявку',
-  'pc3.name':'Продюсирование','pc3.tagline':'Медиаинфраструктура под ключ: дизайн + монтаж + стратегия.','pc3.price':'от $1 000','pc3.period':'в месяц',
-  'pc3.f1':'Контент-стратегия и сценарии','pc3.f2':'Дизайн + монтаж в едином стиле','pc3.f3':'Организация съёмок','pc3.f4':'Команда под ключ','pc3.f5':'Только 4 часа вашего времени','pc3.f6':'Выделенный менеджер','pc3.btn':'Обсудить формат',
+  'pc3.name':'Продюсирование','pc3.tagline':'Полная медиаинфраструктура. Индивидуальный формат под ваш масштаб.','pc3.price':'от $3 000','pc3.period':'/ мес — Bespoke',
+  'pc3.f1':'Контент-стратегия и VSL-сценарии','pc3.f2':'Дизайн + монтаж в едином стиле','pc3.f3':'Организация съёмок и команда','pc3.f4':'KPI-отчётность и аналитика','pc3.f5':'Только 4 часа вашего времени','pc3.f6':'Прямой доступ к основателю','pc3.btn':'Bespoke Inquiry →',
   'cases.chip':'Кейсы','cases.h2':'Реальные результаты','cases.sub':'Клиенты из RU и EN рынков — монтаж, дизайн, полный цикл.',
   'tab.editing':'Монтаж','tab.producing':'Продюсирование','tab.design':'Дизайн',
   'market.ru':'RU рынок','market.en':'EN рынок',
@@ -1308,13 +1320,13 @@ en:{
   'hero.tag':'Full-Cycle Media Production',
   'hero.line1':'Visual Capital','hero.line2':'for Business',
   'hero.sub':'High-end production for market leaders: Web3, Crypto, Trading, Real Estate, Healthcare',
-  'btn.tg':'Telegram','btn.yt':'YouTube',
+  'btn.showreel':'Watch Showreel','btn.tg':'Telegram','btn.yt':'YouTube',
   'stat.markets':'Markets','stat.views':'Views','stat.exp':'In industry','stat.views_val':'300M+','stat.exp_val':'4+ years','founder.name':'Ivan Isakov',
   'about.chip':'About',
-  'about.statement':'Paid ads today are burning your budget',
-  'about.p1':'In 2026, the average user sees 6,000+ ad messages daily. Banners, retargeting, PPC — it all became white noise. Your audience has developed immunity and stopped reacting.',
-  'about.p2':'The only format that still works: VSL (Video Sales Letter) and premium content that builds trust. Content that doesn\'t look like an ad. That attracts warm clients organically — no aggressive CPA, no wasted spend.',
-  'about.p3':'That\'s exactly what we build for our clients in Web3, Trading, Real Estate and Healthcare.',
+  'about.statement':'Meta and Google banned crypto. Paid ads are dead for Web3.',
+  'about.p1':'Web3, Crypto, iGaming — three of the highest-margin niches in 2026. And the three niches Meta, Google and YouTube have banned at the ad account level. Retargeting is dead. PPC doesn\'t work for you.',
+  'about.p2':'The only scalable channel left: organic video content and VSL. Content the algorithm won\'t block. That builds trust in 60 seconds, converts cold audiences and runs without ad spend 24/7.',
+  'about.p3':'Over 4 years we\'ve built a system that delivers ×4.2 ROI versus any paid channel for clients in Web3, Crypto, Trading and Real Estate.',
   'fact.1':'ad messages per day your client sees',
   'fact.2':'of audiences ignore banner ads',
   'fact.3':'average VSL ROI vs. paid ads',
@@ -1347,8 +1359,8 @@ en:{
   'pc1.f1':'Thumbnails & artwork','pc1.f2':'Branding & identity','pc1.f3':'Motion Graphics & intros','pc1.f4':'UI graphics for video','pc1.f5':'Up to 3 revisions included','pc1.btn':'Discuss project',
   'pc2.name':'Editing','pc2.tagline':'Rhythm and atmosphere that keep viewers till the end.','pc2.price':'from $200','pc2.period':'per video',
   'pc2.f1':'Narrative & dynamic editing','pc2.f2':'Sound Design & voiceover','pc2.f3':'VFX & color grading','pc2.f4':'Adaptation for YT, Reels, TG','pc2.f5':'Up to 5 revisions included','pc2.f6':'Turnaround: 5–7 business days','pc2.btn':'Get a Quote',
-  'pc3.name':'Production','pc3.tagline':'Full media infrastructure: design + editing + strategy.','pc3.price':'from $1000','pc3.period':'per month',
-  'pc3.f1':'Content strategy & scripts','pc3.f2':'Design + editing in one style','pc3.f3':'Shoot organization','pc3.f4':'Full team included','pc3.f5':'Only 4 hours of your time','pc3.f6':'Dedicated manager','pc3.btn':'Discuss format',
+  'pc3.name':'Production','pc3.tagline':'Full media infrastructure. Bespoke format for your scale.','pc3.price':'from $3,000','pc3.period':'/ mo — Bespoke',
+  'pc3.f1':'Content strategy & VSL scripts','pc3.f2':'Design + editing in one style','pc3.f3':'Shoot organization & team','pc3.f4':'KPI reporting & analytics','pc3.f5':'Only 4 hours of your time','pc3.f6':'Direct access to founder','pc3.btn':'Bespoke Inquiry →',
   'cases.chip':'Cases','cases.h2':'Real Results','cases.sub':'Clients from RU and EN markets — editing, design, full cycle.',
   'tab.editing':'Editing','tab.producing':'Production','tab.design':'Design',
   'market.ru':'RU market','market.en':'EN market',
@@ -1631,10 +1643,30 @@ document.querySelectorAll('.btn-solid,.btn-lime').forEach(btn=>{
   tick();
 })();
 
+/* HERO SHOWREEL BUTTON — wired inside VIDEO MODAL block below */
+
+/* FORM MICRO-INTERACTIONS */
+(function(){
+  var textarea=document.getElementById('fGoal');
+  if(textarea){
+    var counter=document.createElement('span');
+    counter.className='char-counter';
+    counter.textContent='0 / 500';
+    textarea.parentElement.style.position='relative';
+    textarea.parentElement.appendChild(counter);
+    textarea.style.paddingBottom='28px';
+    textarea.addEventListener('input',function(){
+      var len=this.value.length;
+      counter.textContent=len+' / 500';
+      counter.className='char-counter'+(len>20?' ok':len>0?' warn':'');
+      if(len>500){this.value=this.value.slice(0,500);}
+    });
+  }
+})();
+
 /* VIDEO MODAL */
 (function(){
-  // Modal HTML injected inline so it's always in DOM
-  var modalHTML=`<div id="videoModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px"><div class="vm-wrap" style="position:relative;width:100%;max-width:960px;background:#0d0d0d;border-radius:16px;overflow:hidden;border:1px solid rgba(57,255,20,0.15);box-shadow:0 0 80px rgba(57,255,20,0.08),0 32px 80px rgba(0,0,0,0.8);animation:vmIn .3s cubic-bezier(.22,.68,0,1.2) both"><button id="vmClose" style="position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10">&#x2715;</button><video id="vmPlayer" controls playsinline preload="none" style="width:100%;display:block;max-height:80vh;background:#000"></video><div style="position:absolute;bottom:52px;left:16px;z-index:20;pointer-events:none"><img src="assets/logo.png" alt="POLYAS MEDIA" style="height:20px;width:auto;opacity:0.72"></div></div></div>`;
+  var modalHTML='<div id="videoModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px"><div class="vm-wrap" style="position:relative;width:100%;max-width:960px;background:#0d0d0d;border-radius:16px;overflow:hidden;border:1px solid rgba(57,255,20,0.15);box-shadow:0 0 80px rgba(57,255,20,0.08),0 32px 80px rgba(0,0,0,0.8);animation:vmIn .3s cubic-bezier(.22,.68,0,1.2) both"><button id="vmClose" style="position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10">&#x2715;</button><video id="vmPlayer" controls playsinline preload="none" style="width:100%;display:block;max-height:80vh;background:#000"></video><div style="position:absolute;bottom:52px;left:16px;z-index:20;pointer-events:none"><img src="assets/logo.png" alt="POLYAS MEDIA" style="height:20px;width:auto;opacity:0.72"></div></div></div>';
   document.body.insertAdjacentHTML('beforeend', modalHTML);
   var modal=document.getElementById('videoModal');
   var player=document.getElementById('vmPlayer');
@@ -1657,6 +1689,13 @@ document.querySelectorAll('.btn-solid,.btn-lime').forEach(btn=>{
       openVideo(this.dataset.video);
     });
   });
+  // Also wire up heroShowreelBtn now that modal exists
+  var heroBtn=document.getElementById('heroShowreelBtn');
+  if(heroBtn){
+    heroBtn.addEventListener('click',function(){
+      openVideo('assets/videos/reel-polyas.mp4');
+    });
+  }
   closeBtn.addEventListener('click',closeVideo);
   modal.addEventListener('click',function(e){if(e.target===modal) closeVideo();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape') closeVideo();});
