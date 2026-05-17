@@ -399,6 +399,23 @@
   #panel-design .thumb-carousel-wrap::before{left:0;background:linear-gradient(to right,#111111 0%,#111111 20%,transparent 100%)}
   #panel-design .thumb-carousel-wrap::after{right:0;background:linear-gradient(to left,#111111 0%,#111111 20%,transparent 100%)}
   #panel-design .thumb-item{width:300px;height:169px;border-radius:var(--r-md);border:none;box-shadow:none}
+
+  /* ── BURGER MENU ── */
+  .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;padding:8px;cursor:pointer;background:none;border:none;z-index:1002;margin-left:4px}
+  .nav-burger span{display:block;width:22px;height:2px;background:var(--fg);border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  @media(max-width:768px){
+    .nav-burger{display:flex}
+    .nav-links{display:none;position:fixed;top:80px;left:0;right:0;background:rgba(10,10,10,0.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);flex-direction:column;padding:16px 24px 28px;gap:0;border-bottom:1px solid rgba(57,255,20,0.1);z-index:998;list-style:none}
+    .nav-links.open{display:flex}
+    .nav-links li{border-bottom:1px solid rgba(57,255,20,0.06)}
+    .nav-links li:last-child{border-bottom:none}
+    .nav-links a{display:block;padding:15px 0;font-size:14px;color:var(--fg-2);letter-spacing:.06em}
+    .nav-links a:hover{color:var(--lime)}
+    .nav-links a::after{display:none}
+  }
   </style>
 </head>
 <body>
@@ -420,6 +437,7 @@
         <li><a href="#team"     data-key="nav.team">Команда</a></li>
       </ul>
       <div class="nav-right">
+        <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
         <div class="lang-switch">
           <button class="lang-btn active" data-lang="ru">RU</button>
           <button class="lang-btn" data-lang="en">EN</button>
@@ -974,6 +992,7 @@
     </div>
 
   </div>
+  </div>
 </section>
 
 <!-- TEAM -->
@@ -1151,44 +1170,58 @@
 </div>
 <script>
 const TG_TOKEN   = '8506940363:AAFXyBqUqLZDv9UZDGfR4NI-eMOLIjAZcw4';
-const TG_CHAT_ID = '8506940363';
-
-async function getTgChatId(){
-  // Auto-discover: finds whoever last messaged the bot (Ivan must send /start once)
-  try{
-    const r=await fetch('https://api.telegram.org/bot'+TG_TOKEN+'/getUpdates?limit=20&timeout=0');
-    const j=await r.json();
-    if(j.ok&&j.result&&j.result.length>0){
-      for(let i=j.result.length-1;i>=0;i--){
-        const u=j.result[i];
-        const cid=(u.message||u.channel_post||u.edited_message||{})?.chat?.id;
-        if(cid) return String(cid);
-      }
-    }
-  }catch(e){}
-  return TG_CHAT_ID; // fallback
-}
+// ВАЖНО: вставь свой Telegram chat_id (узнать: напиши @userinfobot в Telegram)
+const TG_CHAT_ID = ''; // <-- сюда свой chat_id
 
 async function sendToTelegramBot(data){
+  if(!TG_CHAT_ID) return;
   const {name,contact,niche,goal}=data;
   const now=new Date().toLocaleString('ru-RU',{timeZone:'Europe/Moscow'});
-  const chatId=await getTgChatId();
   const text=
-    '🟢 Новая заявка — POLYAS MEDIA\n\n'+
-    '👤 Имя: '+name+'\n'+
-    '📱 Контакт: '+contact+'\n'+
-    '🏷 Ниша: '+(niche||'Не указана')+'\n'+
-    '💬 Задача: '+goal+'\n\n'+
-    '🕐 Время: '+now+' МСК\n'+
+    '🟢 Новая заявка — POLYAS MEDIA
+
+'+
+    '👤 Имя: '+name+'
+'+
+    '📱 Контакт: '+contact+'
+'+
+    '🏷 Ниша: '+(niche||'Не указана')+'
+'+
+    '💬 Задача: '+goal+'
+
+'+
+    '🕐 Время: '+now+' МСК
+'+
     '🌐 Язык: '+currentLang.toUpperCase();
-  const res=await fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage',{
+  await fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({chat_id:chatId,text})
+    body:JSON.stringify({chat_id:TG_CHAT_ID,text})
   });
+}
+
+async function sendForm(data){
+  const {name,contact,niche,goal}=data;
+  const now=new Date().toLocaleString('ru-RU',{timeZone:'Europe/Moscow'});
+  const res=await fetch('https://formsubmit.co/ajax/polyasos228@gmail.com',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      _subject:'🟢 Новая заявка — POLYAS MEDIA',
+      _template:'table',
+      _captcha:'false',
+      'Имя':name,
+      'Контакт':contact,
+      'Ниша':niche||'Не указана',
+      'Задача':goal,
+      'Время':now+' МСК',
+      'Язык':currentLang.toUpperCase()
+    })
+  });
+  if(!res.ok) throw new Error('HTTP '+res.status);
   const json=await res.json().catch(()=>({}));
-  if(!res.ok||!json.ok) throw new Error('TG '+(json.description||res.status));
-  return json;
+  if(json.success===false) throw new Error('Form error');
+  sendToTelegramBot(data).catch(()=>{});
 }
 
 /* ═══ I18N ═══ */
@@ -1469,7 +1502,7 @@ leadForm.addEventListener('submit',async e=>{
   submitBtn.disabled=true;
   submitLabel.textContent=currentLang==='ru'?'Отправляем...':'Sending...';
   try{
-    await sendToTelegramBot({name,contact,niche:selectedNiche,goal});
+    await sendForm({name,contact,niche:selectedNiche,goal});
     leadForm.style.display='none';
     formSuccess.classList.add('show');
   }catch(err){
@@ -1479,6 +1512,25 @@ leadForm.addEventListener('submit',async e=>{
     setTimeout(()=>{submitLabel.textContent=i18n[currentLang]['form.submit'];},3500);
   }
 });
+
+/* BURGER MENU */
+(function(){
+  const burger=document.getElementById('navBurger');
+  const navLinks=document.querySelector('.nav-links');
+  if(!burger||!navLinks) return;
+  burger.addEventListener('click',()=>{
+    burger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    document.body.style.overflow=navLinks.classList.contains('open')?'hidden':'';
+  });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      burger.classList.remove('open');
+      navLinks.classList.remove('open');
+      document.body.style.overflow='';
+    });
+  });
+})();
 
 /* PARTICLES */
 (function(){
