@@ -1185,47 +1185,44 @@ const TG_TOKEN   = '8506940363:AAFXyBqUqLZDv9UZDGfR4NI-eMOLIjAZcw4';
 // ВАЖНО: вставь свой Telegram chat_id (узнать: напиши @userinfobot в Telegram)
 const TG_CHAT_ID = '1058852571';
 
-async function sendToTelegramBot(data){
-  if(!TG_CHAT_ID) return;
-  const {name,contact,niche,goal}=data;
-  const now=new Date().toLocaleString('ru-RU',{timeZone:'Europe/Moscow'});
-  const text=
-    '\u{1F7E2} \u041d\u043e\u0432\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430 \u2014 POLYAS MEDIA\n\n'+
-    '\u{1F464} \u0418\u043c\u044f: '+name+'\n'+
-    '\u{1F4F1} \u041a\u043e\u043d\u0442\u0430\u043a\u0442: '+contact+'\n'+
-    '\u{1F3F7} \u041d\u0438\u0448\u0430: '+(niche||'\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430')+'\n'+
-    '\u{1F4AC} \u0417\u0430\u0434\u0430\u0447\u0430: '+goal+'\n\n'+
-    '\u{1F550} \u0412\u0440\u0435\u043c\u044f: '+now+' \u041c\u0421\u041a\n'+
-    '\u{1F310} \u042f\u0437\u044b\u043a: '+currentLang.toUpperCase();
-  await fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({chat_id:TG_CHAT_ID,text})
-  });
-}
-
 async function sendForm(data){
   const {name,contact,niche,goal}=data;
   const now=new Date().toLocaleString('ru-RU',{timeZone:'Europe/Moscow'});
-  const res=await fetch('https://formsubmit.co/ajax/polyasos228@gmail.com',{
+  const lines=[
+    '\u{1F7E2} \u041d\u043e\u0432\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430 \u2014 POLYAS MEDIA',
+    '',
+    '\u{1F464} \u0418\u043c\u044f: '+name,
+    '\u{1F4F1} \u041a\u043e\u043d\u0442\u0430\u043a\u0442: '+contact,
+    '\u{1F3F7} \u041d\u0438\u0448\u0430: '+(niche||'\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430'),
+    '\u{1F4AC} \u0417\u0430\u0434\u0430\u0447\u0430: '+goal,
+    '',
+    '\u{1F550} \u0412\u0440\u0435\u043c\u044f: '+now+' \u041c\u0421\u041a',
+    '\u{1F310} \u042f\u0437\u044b\u043a: '+currentLang.toUpperCase()
+  ];
+  const text=lines.join('\n');
+  // PRIMARY: Telegram Bot — no confirmation needed, instant delivery
+  const tgRes=await fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({chat_id:TG_CHAT_ID,text:text})
+  });
+  if(!tgRes.ok) throw new Error('TG HTTP '+tgRes.status);
+  const tgJson=await tgRes.json();
+  if(!tgJson.ok) throw new Error('TG error: '+(tgJson.description||'unknown'));
+  // SECONDARY: email backup (best-effort, fire-and-forget)
+  fetch('https://formsubmit.co/ajax/polyasos228@gmail.com',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
     body:JSON.stringify({
-      _subject:'🟢 Новая заявка — POLYAS MEDIA',
-      _template:'table',
-      _captcha:'false',
-      'Имя':name,
-      'Контакт':contact,
-      'Ниша':niche||'Не указана',
-      'Задача':goal,
-      'Время':now+' МСК',
-      'Язык':currentLang.toUpperCase()
+      _subject:'\u{1F7E2} \u041d\u043e\u0432\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430 \u2014 POLYAS MEDIA',
+      _template:'table',_captcha:'false',
+      '\u0418\u043c\u044f':name,
+      '\u041a\u043e\u043d\u0442\u0430\u043a\u0442':contact,
+      '\u041d\u0438\u0448\u0430':niche||'\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430',
+      '\u0417\u0430\u0434\u0430\u0447\u0430':goal,
+      '\u0412\u0440\u0435\u043c\u044f':now+' \u041c\u0421\u041a'
     })
-  });
-  if(!res.ok) throw new Error('HTTP '+res.status);
-  const json=await res.json().catch(()=>({}));
-  if(json.success===false) throw new Error('Form error');
-  sendToTelegramBot(data).catch(()=>{});
+  }).catch(function(){});
 }
 
 /* ═══ I18N ═══ */
