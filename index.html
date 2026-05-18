@@ -293,41 +293,57 @@
   @media(max-width:768px){
     .container{padding:0 16px}
     section{padding:72px 0}
-    .services-grid,.pricing-grid,.cases-grid{grid-template-columns:1fr}
-    .team-grid{grid-template-columns:1fr 1fr}
-    .nav-links{display:none}
+    /* ── ANIMATIONS: lighter on mobile ── */
+    .r{transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);will-change:transform,opacity}
+    /* ── HERO ── */
+    .hero-inner{padding:72px 0 52px}
+    .hero-cta{flex-direction:column;align-items:stretch;gap:10px}
+    .hero-cta .btn{justify-content:center;width:100%}
+    .hero-stats{display:grid;grid-template-columns:1fr 1fr;max-width:100%;border-radius:var(--r-md)}
+    .stat-item{min-width:0;padding:20px 16px}
+    .stat-item:nth-child(2){border-right:none}
+    .stat-item:nth-child(3){grid-column:1/-1;border-right:none;border-top:1px solid rgba(57,255,20,0.07)}
+    /* ── SERVICES ── */
+    .services-grid{display:flex;flex-direction:column;gap:16px;grid-template-columns:unset}
+    .svc-card.premium{order:-1}
+    .svc-card{padding:28px 24px}
+    /* ── PRICING: horizontal snap carousel ── */
+    .pricing-grid{display:flex;overflow-x:scroll;overflow-y:visible;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:16px;padding:8px 24px 20px;margin:0 -16px;grid-template-columns:unset;align-items:start}
+    .pricing-grid::-webkit-scrollbar{display:none}
+    .price-card{flex:0 0 80vw;max-width:300px;scroll-snap-align:center}
+    .price-card.featured{flex:0 0 84vw;max-width:320px}
+    /* ── PROCESS ── */
     .process-steps{flex-wrap:wrap}
     .step-btn{min-width:calc(50% - 1px);border-bottom:1px solid rgba(57,255,20,0.07)}
     .process-panel{padding:28px 20px}
     .panel-bg-num{font-size:60px;right:20px}
-    .contact-box{padding:36px 20px}
-    .form-row{grid-template-columns:1fr}
-    .footer-top{grid-template-columns:1fr}
-    .footer-bottom{flex-direction:column;text-align:center}
-    .hero-inner{padding:72px 0 52px}
-    .cases-tabs{flex-wrap:wrap;border-radius:var(--r-md)}
-    .cases-tab{padding:8px 14px;font-size:9px}
-    h1,.hero-h{font-size:clamp(36px,10vw,56px) !important}
-    h2{font-size:clamp(28px,8vw,44px) !important}
+    /* ── ABOUT ── */
     .about-grid{grid-template-columns:1fr}
     .about-facts{grid-template-columns:1fr 1fr}
     .founder-card{max-width:100%}
-    .svc-card{padding:28px 24px}
-    .pricing-card{padding:32px 24px}
-    .price-amount{font-size:28px}
-    .cases-grid{gap:16px}
+    /* ── CASES ── */
+    .cases-grid{grid-template-columns:1fr;gap:16px}
+    .cases-tabs{flex-wrap:wrap;border-radius:var(--r-md);gap:4px}
+    .cases-tab{padding:8px 14px;font-size:9px}
     .case-thumb{height:200px}
     .case-body{padding:20px}
     #panel-design .thumb-item{width:220px;height:124px}
-    .team-grid{gap:16px}
+    /* ── TEAM ── */
+    .team-grid{grid-template-columns:1fr 1fr;gap:16px}
     .team-card{padding:20px 16px}
+    /* ── CONTACT FORM ── */
+    .contact-box{padding:36px 20px}
+    .form-row{grid-template-columns:1fr}
+    .form-field-niche{display:none}
+    /* ── FOOTER ── */
+    .footer-top{grid-template-columns:1fr;gap:40px}
+    .footer-bottom{flex-direction:column;text-align:center}
+    /* ── TYPOGRAPHY ── */
+    h1,.hero-h{font-size:clamp(36px,10vw,56px) !important}
+    h2{font-size:clamp(28px,8vw,44px) !important}
+    /* ── MISC ── */
+    .price-amount{font-size:28px}
     .section-header{margin-bottom:48px}
-    .cases-tabs{gap:4px}
-    .footer-top{gap:40px}
-    .hero-btns{flex-wrap:wrap;gap:12px}
-    .hero-btns .btn{width:100%;justify-content:center}
-    .stat-row{flex-wrap:wrap;gap:24px}
-    .stat-item{min-width:calc(50% - 12px)}
     #vmPlayer{max-height:60vh}
     .vm-wrap{border-radius:12px}
   }
@@ -338,12 +354,23 @@
     .case-thumb{height:180px}
     .about-facts{grid-template-columns:1fr 1fr}
     .about-fact-num{font-size:36px}
-    .pricing-grid{gap:16px}
-    .services-grid{gap:16px}
+    .pricing-grid{gap:12px;padding:8px 16px 20px;margin:0 -14px}
+    .price-card{flex:0 0 86vw}
+    .price-card.featured{flex:0 0 90vw}
+    .services-grid{gap:12px}
     .svc-stats-row,.svc-stats-row>div{font-size:10px}
     .footer-social-btn{font-size:9px}
+    .team-grid{grid-template-columns:1fr}
   }
-  @media(max-width:480px){.team-grid{grid-template-columns:1fr}.hero-cta{flex-direction:column;align-items:stretch}.btn{justify-content:center}.hero-stats{flex-direction:column}.stat-item{min-width:100%;border-right:none;border-bottom:1px solid rgba(57,255,20,0.07)}.stat-item:last-child{border-bottom:none}}
+  /* ── TOUCH/HOVER: disable cursor glow and heavy hover states on touch ── */
+  @media(hover:none){
+    #cursor-glow{display:none !important}
+    .svc-card:hover{transform:none;box-shadow:inset 0 1px 0 rgba(255,255,255,0.06),0 24px 60px rgba(0,0,0,0.3)}
+    .price-card:hover{transform:none}
+    .founder-card:hover{transform:none}
+    .btn:hover{transform:none}
+    .case-card:hover{transform:none}
+  }
 
   /* ── VIDEO MODAL ── */
   #videoModal{
@@ -419,12 +446,12 @@
   .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   @media(max-width:768px){
     .nav-burger{display:flex}
-    .nav-links{display:none;position:fixed;top:80px;left:0;right:0;background:rgba(10,10,10,0.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);flex-direction:column;padding:16px 24px 28px;gap:0;border-bottom:1px solid rgba(57,255,20,0.1);z-index:998;list-style:none}
+    .nav-links{display:none;position:fixed;inset:0;background:rgba(8,8,8,0.98);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);flex-direction:column;align-items:center;justify-content:center;gap:0;z-index:999;list-style:none;padding:80px 0 40px}
     .nav-links.open{display:flex}
-    .nav-links li{border-bottom:1px solid rgba(57,255,20,0.06)}
+    .nav-links li{width:100%;text-align:center;border-bottom:1px solid rgba(57,255,20,0.07)}
     .nav-links li:last-child{border-bottom:none}
-    .nav-links a{display:block;padding:15px 0;font-size:14px;color:var(--fg-2);letter-spacing:.06em}
-    .nav-links a:hover{color:var(--lime)}
+    .nav-links a{display:block;padding:24px 0;font-size:22px;font-family:"Unbounded",sans-serif;font-weight:700;letter-spacing:-.01em;color:rgba(240,240,240,0.55);transition:color .2s}
+    .nav-links a:hover,.nav-links a:active{color:var(--lime)}
     .nav-links a::after{display:none}
   }
   /* CRO: enterprise card label */
@@ -1107,7 +1134,7 @@
                 <input class="form-input" id="fContact" type="text" placeholder="@username или +7..." data-ph-ru="@username или +7..." data-ph-en="@username or +1..." required />
               </div>
             </div>
-            <div class="form-field">
+            <div class="form-field form-field-niche">
               <label class="form-label" data-key="form.niche">Ваша ниша</label>
               <div class="custom-select" id="nicheSelect">
                 <button type="button" class="cs-trigger" id="csTrigger" aria-haspopup="listbox" aria-expanded="false">
@@ -1520,6 +1547,24 @@ leadForm.addEventListener('submit',async e=>{
     setTimeout(()=>{submitLabel.textContent=i18n[currentLang]['form.submit'];},3500);
   }
 });
+
+/* PRICING CAROUSEL: scroll System card into center on mobile */
+(function(){
+  function centerFeatured(){
+    if(window.innerWidth>768) return;
+    const grid=document.querySelector('.pricing-grid');
+    const featured=document.querySelector('.price-card.featured');
+    if(!grid||!featured) return;
+    const offset=featured.offsetLeft-((grid.clientWidth-featured.offsetWidth)/2);
+    grid.scrollLeft=offset;
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',centerFeatured);
+  } else {
+    setTimeout(centerFeatured,80);
+  }
+  window.addEventListener('resize',centerFeatured);
+})();
 
 /* BURGER MENU */
 (function(){
