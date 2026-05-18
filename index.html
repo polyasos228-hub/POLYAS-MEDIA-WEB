@@ -117,6 +117,7 @@
   .svc-card:hover{border-color:rgba(57,255,20,0.42);box-shadow:inset 0 1px 0 rgba(255,255,255,0.08),0 24px 60px rgba(0,0,0,0.5),0 0 40px rgba(57,255,20,0.1),0 0 80px rgba(57,255,20,0.05);transform:translateY(-7px) scale(1.018)}
   .svc-card:hover::before{opacity:1}
   .svc-icon{width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(57,255,20,0.08);border:1px solid rgba(57,255,20,0.2);margin-bottom:24px;font-size:22px}
+  .svc-icon svg{width:22px;height:22px;color:var(--lime);flex-shrink:0}
   .svc-tag{font-family:"Unbounded",sans-serif;font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(57,255,20,0.5);margin-bottom:12px}
   .svc-title{font-family:"Unbounded",sans-serif;font-size:22px;font-weight:800;color:var(--fg);letter-spacing:-.025em;margin-bottom:14px}
   .svc-desc{font-size:14px;color:var(--fg-2);line-height:1.75;margin-bottom:22px}
@@ -329,7 +330,10 @@
     .case-body{padding:20px}
     #panel-design .thumb-item{width:220px;height:124px}
     /* ── TEAM ── */
-    .team-grid{grid-template-columns:1fr 1fr;gap:16px}
+    .team-grid{display:flex;overflow-x:scroll;overflow-y:visible;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:14px;padding:20px 24px 20px;margin:-12px -16px -12px;grid-template-columns:unset}
+    .team-grid::-webkit-scrollbar{display:none}
+    .team-card{flex:0 0 72vw;max-width:240px;scroll-snap-align:center}
+    .team-swipe-hint{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px;padding:0 8px;font-family:"Unbounded",sans-serif;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,240,240,0.28)}
     .team-card{padding:20px 16px}
     /* ── CONTACT FORM ── */
     .contact-box{padding:36px 20px}
@@ -360,7 +364,7 @@
     .services-grid{gap:12px}
     .svc-stats-row,.svc-stats-row>div{font-size:10px}
     .footer-social-btn{font-size:9px}
-    .team-grid{grid-template-columns:1fr}
+    .team-card{flex:0 0 80vw;max-width:280px}
   }
   /* ── TOUCH/HOVER: disable cursor glow and heavy hover states on touch ── */
   @media(hover:none){
@@ -459,6 +463,7 @@
   .svc-card.premium::after{content:"FLAGSHIP" !important}
   .price-card.featured .price-service{background:linear-gradient(135deg,var(--fg) 0%,var(--lime) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
+  .team-swipe-hint{display:none}
   /* ── PRICING SWIPE HINT ── */
   .pricing-swipe-hint{display:none}
   @media(max-width:768px){
@@ -603,7 +608,7 @@
 
       <!-- Design -->
       <div class="svc-card r r-d1">
-        <div class="svc-icon">✦</div>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
         <div class="svc-tag">MODULE · 01</div>
         <div class="svc-title" data-key="svc1.title">Превью & Визуал</div>
         <p class="svc-desc" data-key="svc1.desc">CTR-оптимизированные обложки и визуальная система, которая транслирует премиальность с первого взгляда и удваивает кликабельность.</p>
@@ -642,7 +647,7 @@
 
       <!-- Editing -->
       <div class="svc-card r r-d2">
-        <div class="svc-icon">⚡</div>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11V22L19.5 11H13V2Z"/></svg></div>
         <div class="svc-tag">MODULE · 02</div>
         <div class="svc-title" data-key="svc2.title">Продающий монтаж</div>
         <p class="svc-desc" data-key="svc2.desc">Tech Luxury монтаж уровня западных студий — удерживает внимание, строит нарратив, конвертирует зрителя в лид.</p>
@@ -671,7 +676,7 @@
 
       <!-- Producing -->
       <div class="svc-card premium r r-d3">
-        <div class="svc-icon">◈</div>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8.5" r="4"/><path d="M11.5 12L20.5 21"/><path d="M15.5 17.5H19"/><path d="M17.5 15.5V19"/></svg></div>
         <div class="svc-tag">FLAGSHIP · 03</div>
         <div class="svc-title" data-key="svc3.title">YouTube под ключ</div>
         <p class="svc-desc" data-key="svc3.desc">Вы записываете 4 часа в месяц — мы берём всё остальное. Стратегия, сценарии, монтаж, дизайн, дистрибуция, воронка лидогенерации.</p>
@@ -800,7 +805,7 @@
         <div class="price-service" data-key="pc2.name">Система</div>
         <p class="price-tagline" data-key="pc2.tagline">YouTube-канал как инструмент лидогенерации — полностью под ключ.</p>
         <div class="price-amount" data-key="pc2.price">от $1 500</div>
-        <div class="price-period" data-key="pc2.period">в месяц · 150 000 ₽</div>
+        <div class="price-period" data-key="pc2.period">в месяц</div>
         <div class="price-divider"></div>
         <ul class="price-features">
           <li data-key="pc2.f1">Полная стратегия и VSL-сценарии</li>
@@ -1081,6 +1086,11 @@
       <h2 data-key="team.h2">Люди за результатом</h2>
       <p data-key="team.sub">Специалисты с опытом в топовых продакшн-студиях.</p>
     </div>
+    <div class="team-swipe-hint" aria-hidden="true">
+      <span class="swipe-arrow-l">←</span>
+      <span data-key="team.swipe">Свайп для просмотра команды</span>
+      <span class="swipe-arrow-r">→</span>
+    </div>
     <div class="team-grid">
       <div class="team-card r r-d1">
         <div class="team-photo">
@@ -1336,10 +1346,10 @@ ru:{
   'pricing.chip':'Прайсы','pricing.h2':'Три формата — один стандарт','pricing.sub':'Выберите уровень под ваш масштаб. 80% клиентов выбирают «Система».',
   'pc1.name':'Проект','pc1.tagline':'Исполнение без стратегии — для тех, у кого уже есть план.','pc1.price':'от $300','pc1.period':'за ролик',
   'pc1.f1':'High-retention монтаж уровня Tech Luxury','pc1.f2':'Sound Design & цветокоррекция','pc1.f3':'CTR-оптимизированные превью','pc1.f4':'Адаптация под YT, Reels, TG','pc1.f5':'До 3 правок включено','pc1.btn':'Обсудить проект',
-  'pc2.name':'Система','pc2.tagline':'YouTube-канал как инструмент лидогенерации — полностью под ключ.','pc2.price':'от $1 500','pc2.period':'в месяц · 150 000 ₽',
+  'pc2.name':'Система','pc2.tagline':'YouTube-канал как инструмент лидогенерации — полностью под ключ.','pc2.price':'от $1 500','pc2.period':'в месяц',
   'pc2.f1':'Полная стратегия и VSL-сценарии','pc2.f2':'Дистанционная режиссура записи','pc2.f3':'Tech Luxury монтаж + премиальный дизайн','pc2.f4':'Дистрибуция + воронка лидогенерации','pc2.f5':'KPI-аналитика и оптимизация','pc2.f6':'Только 4 часа вашего времени в месяц','pc2.btn':'Стратегический Zoom →',
   'pc3.name':'Enterprise','pc3.tagline':'Мульти-канальное масштабирование с выделенной командой под проект.','pc3.price':'По запросу','pc3.period':'индивидуально',
-  'pc3.f1':'Всё из тарифа «Система»','pc3.f2':'Shorts, Reels, TikTok — мультиплатформа','pc3.f3':'Мультиязычная локализация контента','pc3.f4':'Выделенная команда под проект','pc3.f5':'Интеграция с performance marketing','pc3.f6':'SLA и приоритетная поддержка','pc3.btn':'Обсудить масштаб →','pricing.swipe':'Свайп для просмотра тарифов',
+  'pc3.f1':'Всё из тарифа «Система»','pc3.f2':'Shorts, Reels, TikTok — мультиплатформа','pc3.f3':'Мультиязычная локализация контента','pc3.f4':'Выделенная команда под проект','pc3.f5':'Интеграция с performance marketing','pc3.f6':'SLA и приоритетная поддержка','pc3.btn':'Обсудить масштаб →','pricing.swipe':'Свайп для просмотра тарифов','team.swipe':'Свайп для просмотра команды',
   'cases.chip':'Кейсы','cases.h2':'Реальные результаты','cases.sub':'Клиенты из RU и EN рынков — монтаж, дизайн, полный цикл.',
   'tab.editing':'Монтаж','tab.producing':'Продюсирование','tab.design':'Дизайн',
   'market.ru':'RU рынок','market.en':'EN рынок',
@@ -1596,6 +1606,21 @@ leadForm.addEventListener('submit',async e=>{
     setTimeout(centerFeatured,80);
   }
   window.addEventListener('resize',centerFeatured);
+})();
+
+/* TEAM CAROUSEL: center first card on mobile */
+(function(){
+  function centerTeam(){
+    if(window.innerWidth>768) return;
+    const grid=document.querySelector('.team-grid');
+    const first=grid&&grid.querySelector('.team-card');
+    if(!grid||!first) return;
+    const offset=first.offsetLeft-Math.max(0,(grid.clientWidth-first.offsetWidth)/2);
+    grid.scrollLeft=Math.max(0,offset);
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',centerTeam);}
+  else{setTimeout(centerTeam,80);}
+  window.addEventListener('resize',centerTeam);
 })();
 
 /* BURGER MENU */
