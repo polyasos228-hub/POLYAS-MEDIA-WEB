@@ -427,6 +427,10 @@
     .nav-links a:hover{color:var(--lime)}
     .nav-links a::after{display:none}
   }
+  /* CRO: enterprise card label */
+  .price-card.enterprise-card::after{content:"ENTERPRISE";position:absolute;top:24px;right:24px;font-family:"Unbounded",sans-serif;font-size:8px;font-weight:800;letter-spacing:.2em;color:rgba(255,255,255,0.28);padding:4px 10px;border-radius:100px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1)}
+  .svc-card.premium::after{content:"FLAGSHIP" !important}
+  .price-card.featured .price-service{background:linear-gradient(135deg,var(--fg) 0%,var(--lime) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   </style>
 </head>
 <body>
@@ -464,14 +468,14 @@
   <div class="hero-bg"></div><div class="hero-scan"></div>
   <div class="container">
     <div class="hero-inner">
-      <div class="chip r"><span class="chip-dot"></span><span data-key="hero.tag">Полный цикл медиапроизводства</span></div>
+      <div class="chip r"><span class="chip-dot"></span><span data-key="hero.tag">YouTube Production System · Под ключ · Дистанционно</span></div>
       <h1 class="hero-h1 r r-d1">
-        <span class="line-1" data-key="hero.line1">Визуальный капитал</span>
-        <span class="line-2" data-key="hero.line2">для бизнеса</span>
+        <span class="line-1" data-key="hero.line1">YouTube-канал</span>
+        <span class="line-2" data-key="hero.line2">как актив роста</span>
       </h1>
-      <p class="hero-sub r r-d2" data-key="hero.sub">Высокоуровневый продакшн для лидеров ниш: Web3, Криптовалюта, Трейдинг, Недвижимость, Медицина</p>
-      <div class="hero-cta r r-d3">
-        <button class="btn btn-solid" id="heroShowreelBtn" style="gap:12px"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M8 5v14l11-7z"/></svg><span data-key="btn.showreel">Смотреть Showreel</span></button>
+      <p class="hero-sub r r-d2" data-key="hero.sub">4 часа вашего времени в месяц — мы берём производство полностью. Стратегия, сценарии, монтаж, дистрибуция. Тёплые лиды без рекламного бюджета.</p>
+            <div class="hero-cta r r-d3">
+        <a href="#contact" class="btn btn-solid"><span data-key="btn.zoom">Стратегический Zoom · 15 мин →</span></a>
         <a href="https://t.me/mediapolyas" target="_blank" class="btn btn-lime"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.606c-.15.68-.543.847-1.1.527l-3.03-2.233-1.462 1.407c-.162.162-.297.297-.608.297l.216-3.065 5.579-5.036c.243-.216-.053-.334-.375-.118L7.28 14.04l-2.97-.928c-.645-.203-.657-.645.135-.953l11.595-4.47c.537-.197 1.007.13.522.56z"/></svg><span data-key="btn.tg">Telegram</span></a>
         <a href="https://www.youtube.com/@polyasmedia" target="_blank" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span data-key="btn.yt">YouTube</span></a>
       </div>
@@ -538,17 +542,17 @@
   <div class="container">
     <div class="section-header r">
       <span class="chip"><span class="chip-dot"></span><span data-key="services.chip">Услуги</span></span>
-      <h2 data-key="services.h2">Три направления — один результат</h2>
-      <p data-key="services.sub">Полный цикл медиапроизводства — от стратегии до дистрибуции.</p>
+      <h2 data-key="services.h2">Экосистема под ключ — три модуля</h2>
+      <p data-key="services.sub">Full YouTube Production — флагманский продукт. Монтаж и дизайн — структурные модули, доступные как часть системы или отдельно.</p>
     </div>
     <div class="services-grid">
 
       <!-- Design -->
       <div class="svc-card r r-d1">
         <div class="svc-icon">✦</div>
-        <div class="svc-tag">01 — Visual</div>
-        <div class="svc-title" data-key="svc1.title">Дизайн</div>
-        <p class="svc-desc" data-key="svc1.desc">Визуальный язык, который транслирует премиальность с первого взгляда и выделяет вас на любой платформе.</p>
+        <div class="svc-tag">MODULE · 01</div>
+        <div class="svc-title" data-key="svc1.title">Превью & Визуал</div>
+        <p class="svc-desc" data-key="svc1.desc">CTR-оптимизированные обложки и визуальная система, которая транслирует премиальность с первого взгляда и удваивает кликабельность.</p>
         <ul class="svc-items">
           <li data-key="svc1.i1">Thumbnails и обложки каналов</li>
           <li data-key="svc1.i2">Брендинг и айдентика</li>
@@ -585,9 +589,9 @@
       <!-- Editing -->
       <div class="svc-card r r-d2">
         <div class="svc-icon">⚡</div>
-        <div class="svc-tag">02 — Post-Pro</div>
-        <div class="svc-title" data-key="svc2.title">Монтаж</div>
-        <p class="svc-desc" data-key="svc2.desc">Ритм, динамика, атмосфера. Монтаж, который удерживает внимание до последней секунды.</p>
+        <div class="svc-tag">MODULE · 02</div>
+        <div class="svc-title" data-key="svc2.title">Продающий монтаж</div>
+        <p class="svc-desc" data-key="svc2.desc">Tech Luxury монтаж уровня западных студий — удерживает внимание, строит нарратив, конвертирует зрителя в лид.</p>
         <ul class="svc-items">
           <li data-key="svc2.i1">Narrative и dynamic-монтаж</li>
           <li data-key="svc2.i2">Sound Design &amp; озвучка</li>
@@ -614,14 +618,14 @@
       <!-- Producing -->
       <div class="svc-card premium r r-d3">
         <div class="svc-icon">◈</div>
-        <div class="svc-tag">03 — Full Cycle</div>
-        <div class="svc-title" data-key="svc3.title">Продюсирование</div>
-        <p class="svc-desc" data-key="svc3.desc">Вы задаёте направление — мы строим медиаинфраструктуру под ключ. Включает монтаж и дизайн как единую систему.</p>
+        <div class="svc-tag">FLAGSHIP · 03</div>
+        <div class="svc-title" data-key="svc3.title">YouTube под ключ</div>
+        <p class="svc-desc" data-key="svc3.desc">Вы записываете 4 часа в месяц — мы берём всё остальное. Стратегия, сценарии, монтаж, дизайн, дистрибуция, воронка лидогенерации.</p>
         <ul class="svc-items">
-          <li data-key="svc3.i1">Контент-стратегия и сценарии</li>
-          <li data-key="svc3.i2">Дизайн + монтаж в едином стиле</li>
-          <li data-key="svc3.i3">Организация съёмок и команда</li>
-          <li data-key="svc3.i4">Аналитика и оптимизация</li>
+          <li data-key="svc3.i1">Глубокий препродакшн и VSL-сценарии</li>
+          <li data-key="svc3.i2">Дистанционная режиссура съёмки</li>
+          <li data-key="svc3.i3">Tech Luxury монтаж + премиальный дизайн</li>
+          <li data-key="svc3.i4">Воронка лидогенерации + аналитика</li>
         </ul>
         <div style="flex:1"></div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px">
@@ -638,7 +642,7 @@
             <div style="font-size:10px;color:var(--fg-2);margin-top:6px;letter-spacing:.04em" data-key="svc3.s3">ПРОЕКТА</div>
           </div>
         </div>
-        <div class="svc-usp"><span class="svc-usp-icon"><svg class="clock-face" id="svgClock" viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.4"/><line id="clockHr" x1="12" y1="12" x2="12" y2="7.8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line id="clockMin" x1="12" y1="12" x2="15.8" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg></span><span class="svc-usp-text" data-key="svc3.usp">4 часа вашего времени</span></div>
+        <div class="svc-usp"><span class="svc-usp-icon"><svg class="clock-face" id="svgClock" viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.4"/><line id="clockHr" x1="12" y1="12" x2="12" y2="7.8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line id="clockMin" x1="12" y1="12" x2="15.8" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg></span><span class="svc-usp-text" data-key="svc3.usp">4 часа в месяц — ваше участие</span></div>
       </div>
 
     </div>
@@ -712,58 +716,61 @@
     </div>
     <div class="pricing-grid">
 
+      <!-- TIER 1: PROJECT -->
       <div class="price-card r r-d1">
-        <div class="price-badge">01 — Visual</div>
-        <div class="price-service" data-key="pc1.name">Дизайн</div>
-        <p class="price-tagline" data-key="pc1.tagline">Визуальная система для вашего канала и бренда.</p>
-        <div class="price-amount" data-key="pc1.price">от $100</div>
-        <div class="price-period" data-key="pc1.period">за проект</div>
+        <div class="price-badge">01 — Project</div>
+        <div class="price-service" data-key="pc1.name">Проект</div>
+        <p class="price-tagline" data-key="pc1.tagline">Исполнение без стратегии — для тех, у кого уже есть план.</p>
+        <div class="price-amount" data-key="pc1.price">от $300</div>
+        <div class="price-period" data-key="pc1.period">за ролик</div>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li data-key="pc1.f1">Thumbnails и обложки</li>
-          <li data-key="pc1.f2">Брендинг и айдентика</li>
-          <li data-key="pc1.f3">Motion Graphics &amp; интро</li>
-          <li data-key="pc1.f4">UI-графика для видео</li>
+          <li data-key="pc1.f1">High-retention монтаж уровня Tech Luxury</li>
+          <li data-key="pc1.f2">Sound Design & цветокоррекция</li>
+          <li data-key="pc1.f3">CTR-оптимизированные превью</li>
+          <li data-key="pc1.f4">Адаптация под YT, Reels, TG</li>
           <li data-key="pc1.f5">До 3 правок включено</li>
         </ul>
         <a href="#contact" class="btn btn-ghost btn-full" data-key="pc1.btn">Обсудить проект</a>
       </div>
 
+      <!-- TIER 2: SYSTEM (FLAGSHIP) -->
       <div class="price-card featured r r-d2">
-        <div class="featured-label">TOP CHOICE</div>
-        <div class="price-badge hot">02 — Post-Pro</div>
-        <div class="price-service" data-key="pc2.name">Монтаж</div>
-        <p class="price-tagline" data-key="pc2.tagline">Ритм и атмосфера, которые держат зрителя до конца.</p>
-        <div class="price-amount" data-key="pc2.price">от $200</div>
-        <div class="price-period" data-key="pc2.period">за видео</div>
+        <div class="featured-label">FOUNDERS' CHOICE</div>
+        <div class="price-badge hot">02 — System</div>
+        <div class="price-service" data-key="pc2.name">Система</div>
+        <p class="price-tagline" data-key="pc2.tagline">YouTube-канал как инструмент лидогенерации — полностью под ключ.</p>
+        <div class="price-amount" data-key="pc2.price">от $1 500</div>
+        <div class="price-period" data-key="pc2.period">в месяц · 150 000 ₽</div>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li data-key="pc2.f1">Narrative и dynamic-монтаж</li>
-          <li data-key="pc2.f2">Sound Design &amp; озвучка</li>
-          <li data-key="pc2.f3">VFX и цветокоррекция</li>
-          <li data-key="pc2.f4">Адаптация под YT, Reels, TG</li>
-          <li data-key="pc2.f5">До 5 правок включено</li>
-          <li data-key="pc2.f6">Сроки: 5–7 рабочих дней</li>
+          <li data-key="pc2.f1">Полная стратегия и VSL-сценарии</li>
+          <li data-key="pc2.f2">Дистанционная режиссура записи</li>
+          <li data-key="pc2.f3">Tech Luxury монтаж + премиальный дизайн</li>
+          <li data-key="pc2.f4">Дистрибуция + воронка лидогенерации</li>
+          <li data-key="pc2.f5">KPI-аналитика и оптимизация</li>
+          <li data-key="pc2.f6">Только 4 часа вашего времени в месяц</li>
         </ul>
-        <a href="#contact" class="btn btn-lime btn-full" data-key="pc2.btn">Оставить заявку</a>
+        <a href="#contact" class="btn btn-lime btn-full" data-key="pc2.btn">Стратегический Zoom →</a>
       </div>
 
-      <div class="price-card r r-d3">
-        <div class="price-badge">03 — Full Cycle</div>
-        <div class="price-service" data-key="pc3.name">Продюсирование</div>
-        <p class="price-tagline" data-key="pc3.tagline">Полная медиаинфраструктура. Индивидуальный формат под ваш масштаб.</p>
-        <div class="price-amount" data-key="pc3.price">от $1 500</div>
-        <div class="price-period" data-key="pc3.period">в месяц · Bespoke</div>
+      <!-- TIER 3: ENTERPRISE -->
+      <div class="price-card enterprise-card r r-d3">
+        <div class="price-badge">03 — Enterprise</div>
+        <div class="price-service" data-key="pc3.name">Enterprise</div>
+        <p class="price-tagline" data-key="pc3.tagline">Мульти-канальное масштабирование с выделенной командой под проект.</p>
+        <div class="price-amount" data-key="pc3.price" style="font-size:clamp(20px,2.5vw,30px)">По запросу</div>
+        <div class="price-period" data-key="pc3.period">индивидуально</div>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li data-key="pc3.f1">Контент-стратегия и VSL-сценарии</li>
-          <li data-key="pc3.f2">Дизайн + монтаж в едином стиле</li>
-          <li data-key="pc3.f3">Организация съёмок и команда</li>
-          <li data-key="pc3.f4">KPI-отчётность и аналитика</li>
-          <li data-key="pc3.f5">Только 4 часа вашего времени</li>
-          <li data-key="pc3.f6">Прямой доступ к основателю</li>
+          <li data-key="pc3.f1">Всё из тарифа «Система»</li>
+          <li data-key="pc3.f2">Shorts, Reels, TikTok — мультиплатформа</li>
+          <li data-key="pc3.f3">Мультиязычная локализация контента</li>
+          <li data-key="pc3.f4">Выделенная команда под проект</li>
+          <li data-key="pc3.f5">Интеграция с performance marketing</li>
+          <li data-key="pc3.f6">SLA и приоритетная поддержка</li>
         </ul>
-        <a href="https://t.me/polyasmedia" target="_blank" class="btn btn-lime btn-full" data-key="pc3.btn">Индивидуальный запрос →</a>
+        <a href="https://t.me/mediapolyas" target="_blank" class="btn btn-ghost btn-full" data-key="pc3.btn">Обсудить масштаб →</a>
       </div>
 
     </div>
@@ -1087,8 +1094,8 @@
       <div class="contact-box r">
         <div class="contact-inner">
           <span class="chip contact-chip"><span class="chip-dot"></span><span data-key="contact.chip">Заявка</span></span>
-          <h2 class="contact-h" data-key="contact.h">Готовы масштабировать <span class="neon">бизнес?</span></h2>
-          <p class="contact-sub" data-key="contact.sub">Оставьте заявку — ответим в течение 2 часов и проведём бесплатный аудит вашего медиапространства.</p>
+          <h2 class="contact-h" data-key="contact.h">Запишитесь на <span class="neon">стратегический Zoom</span></h2>
+          <p class="contact-sub" data-key="contact.sub">15 минут — разберём ваш YouTube и набросаем план лидогенерации. Бесплатно.</p>
           <form class="lead-form" id="leadForm" novalidate>
             <div class="form-row">
               <div class="form-field">
@@ -1230,10 +1237,10 @@ const i18n={
 ru:{
   'nav.about':'О компании','nav.services':'Услуги','nav.pricing':'Прайсы',
   'nav.cases':'Кейсы','nav.team':'Команда','nav.cta':'Оставить заявку',
-  'hero.tag':'Полный цикл медиапроизводства',
-  'hero.line1':'Визуальный капитал','hero.line2':'для бизнеса',
-  'hero.sub':'Высокоуровневый продакшн для лидеров ниш: Web3, Криптовалюта, Трейдинг, Недвижимость, Медицина',
-  'btn.showreel':'Смотреть Showreel','btn.tg':'Telegram','btn.yt':'YouTube',
+  'hero.tag':'YouTube Production System · Под ключ · Дистанционно',
+  'hero.line1':'YouTube-канал','hero.line2':'как актив роста',
+  'hero.sub':'4 часа вашего времени в месяц — мы берём производство полностью. Стратегия, сценарии, монтаж, дистрибуция. Тёплые лиды без рекламного бюджета.',
+  'btn.zoom':'Стратегический Zoom · 15 мин →','btn.showreel':'Смотреть Showreel','btn.tg':'Telegram','btn.yt':'YouTube',
   'stat.markets':'Рынки','stat.views':'Просмотров','stat.exp':'В индустрии','stat.views_val':'300 млн+','stat.exp_val':'4+ лет','founder.name':'Иван Исаков',
   'about.chip':'О компании',
   'about.statement':'Таргет и контекст перестали работать — органика выигрывает',
@@ -1245,15 +1252,15 @@ ru:{
   'fact.3':'средний ROI VSL против таргета',
   'founder.tag':'Основатель','founder.role':'CEO, POLYAS MEDIA',
   'founder.bio':'4+ года в профессиональном медиапроизводстве. Создал POLYAS MEDIA как ответ на растущий запрос рынка в конверсионном видеоконтенте уровня западных студий.',
-  'services.chip':'Услуги','services.h2':'Три направления — один результат',
-  'services.sub':'Полный цикл медиапроизводства — от стратегии до дистрибуции.',
-  'svc1.title':'Дизайн','svc1.desc':'Визуальный язык, который транслирует премиальность с первого взгляда и выделяет вас на любой платформе.',
+  'services.chip':'Услуги','services.h2':'Экосистема под ключ — три модуля',
+  'services.sub':'Full YouTube Production — флагманский продукт. Монтаж и дизайн — структурные модули, доступные как часть системы или отдельно.',
+  'svc1.title':'Превью & Визуал','svc1.desc':'CTR-оптимизированные обложки и визуальная система, которая транслирует премиальность с первого взгляда и удваивает кликабельность.',
   'svc1.i1':'Thumbnails и обложки каналов','svc1.i2':'Брендинг и айдентика','svc1.i3':'Motion Graphics & интро','svc1.i4':'UI-графика для видео',
-  'svc2.title':'Монтаж','svc2.desc':'Ритм, динамика, атмосфера. Монтаж, который удерживает внимание до последней секунды.',
+  'svc2.title':'Продающий монтаж','svc2.desc':'Tech Luxury монтаж уровня западных студий — удерживает внимание, строит нарратив, конвертирует зрителя в лид.',
   'svc2.s1':'ПРОЕКТОВ','svc2.s2':'ГОДА ОПЫТА','svc2.s3':'ДНЕЙ СРОК','svc2.i1':'Narrative и dynamic-монтаж','svc2.i2':'Sound Design & озвучка','svc2.i3':'VFX и цветокоррекция','svc2.i4':'Адаптация под YT, Reels, TG',
-  'svc3.title':'Продюсирование','svc3.desc':'Вы задаёте направление — мы строим медиаинфраструктуру под ключ. Включает монтаж и дизайн как единую систему.',
-  'svc3.s1':'ОХВАТ','svc3.s2':'ЗАЯВОК/МЕС','svc3.s3':'ПРОЕКТА','svc3.i1':'Контент-стратегия и сценарии','svc3.i2':'Дизайн + монтаж в едином стиле','svc3.i3':'Организация съёмок и команда','svc3.i4':'Аналитика и оптимизация',
-  'svc3.usp':'4 часа вашего времени',
+  'svc3.title':'YouTube под ключ','svc3.desc':'Вы записываете 4 часа в месяц — мы берём всё остальное. Стратегия, сценарии, монтаж, дизайн, дистрибуция, воронка лидогенерации.',
+  'svc3.s1':'ОХВАТ','svc3.s2':'ЗАЯВОК/МЕС','svc3.s3':'ПРОЕКТА','svc3.i1':'Глубокий препродакшн и VSL-сценарии','svc3.i2':'Дистанционная режиссура съёмки','svc3.i3':'Tech Luxury монтаж + премиальный дизайн','svc3.i4':'Воронка лидогенерации + аналитика',
+  'svc3.usp':'4 часа в месяц — ваше участие',
   'process.chip':'Процесс','process.h2':'От брифа до результата','process.sub':'Пять этапов отлаженного производственного пайплайна.',
   'step1.label':'Договор','step2.label':'Концепт','step3.label':'Инфраструктура','step4.label':'Производство','step5.label':'Пост-продакшн',
   'step1.num':'Шаг 01 / 05','step2.num':'Шаг 02 / 05','step3.num':'Шаг 03 / 05','step4.num':'Шаг 04 / 05','step5.num':'Шаг 05 / 05',
@@ -1267,13 +1274,13 @@ ru:{
   'step4.t1':'Съёмка','step4.t2':'Студия','step4.t3':'4 часа',
   'step5.title':'Пост-продакшн','step5.desc':'Монтаж, цветокоррекция, Sound Design, финальный рендер. Доставка в согласованных форматах и сроках. Аналитика результатов после публикации.',
   'step5.t1':'Монтаж','step5.t2':'Цвет','step5.t3':'Доставка','step5.t4':'Аналитика',
-  'pricing.chip':'Прайсы','pricing.h2':'Прозрачные условия','pricing.sub':'Выберите формат под ваши задачи и масштаб бизнеса.',
-  'pc1.name':'Дизайн','pc1.tagline':'Визуальная система для вашего канала и бренда.','pc1.price':'от $100','pc1.period':'за проект',
-  'pc1.f1':'Thumbnails и обложки','pc1.f2':'Брендинг и айдентика','pc1.f3':'Motion Graphics & интро','pc1.f4':'UI-графика для видео','pc1.f5':'До 3 правок включено','pc1.btn':'Обсудить проект',
-  'pc2.name':'Монтаж','pc2.tagline':'Ритм и атмосфера, которые держат зрителя до конца.','pc2.price':'от $200','pc2.period':'за видео',
-  'pc2.f1':'Narrative и dynamic-монтаж','pc2.f2':'Sound Design & озвучка','pc2.f3':'VFX и цветокоррекция','pc2.f4':'Адаптация под YT, Reels, TG','pc2.f5':'До 5 правок включено','pc2.f6':'Сроки: 5–7 рабочих дней','pc2.btn':'Оставить заявку',
-  'pc3.name':'Продюсирование','pc3.tagline':'Полная медиаинфраструктура. Индивидуальный формат под ваш масштаб.','pc3.price':'от $1 500','pc3.period':'в месяц · Bespoke',
-  'pc3.f1':'Контент-стратегия и VSL-сценарии','pc3.f2':'Дизайн + монтаж в едином стиле','pc3.f3':'Организация съёмок и команда','pc3.f4':'KPI-отчётность и аналитика','pc3.f5':'Только 4 часа вашего времени','pc3.f6':'Прямой доступ к основателю','pc3.btn':'Индивидуальный запрос →',
+  'pricing.chip':'Прайсы','pricing.h2':'Три формата — один стандарт','pricing.sub':'Выберите уровень под ваш масштаб. 80% клиентов выбирают «Система».',
+  'pc1.name':'Проект','pc1.tagline':'Исполнение без стратегии — для тех, у кого уже есть план.','pc1.price':'от $300','pc1.period':'за ролик',
+  'pc1.f1':'High-retention монтаж уровня Tech Luxury','pc1.f2':'Sound Design & цветокоррекция','pc1.f3':'CTR-оптимизированные превью','pc1.f4':'Адаптация под YT, Reels, TG','pc1.f5':'До 3 правок включено','pc1.btn':'Обсудить проект',
+  'pc2.name':'Система','pc2.tagline':'YouTube-канал как инструмент лидогенерации — полностью под ключ.','pc2.price':'от $1 500','pc2.period':'в месяц · 150 000 ₽',
+  'pc2.f1':'Полная стратегия и VSL-сценарии','pc2.f2':'Дистанционная режиссура записи','pc2.f3':'Tech Luxury монтаж + премиальный дизайн','pc2.f4':'Дистрибуция + воронка лидогенерации','pc2.f5':'KPI-аналитика и оптимизация','pc2.f6':'Только 4 часа вашего времени в месяц','pc2.btn':'Стратегический Zoom →',
+  'pc3.name':'Enterprise','pc3.tagline':'Мульти-канальное масштабирование с выделенной командой под проект.','pc3.price':'По запросу','pc3.period':'индивидуально',
+  'pc3.f1':'Всё из тарифа «Система»','pc3.f2':'Shorts, Reels, TikTok — мультиплатформа','pc3.f3':'Мультиязычная локализация контента','pc3.f4':'Выделенная команда под проект','pc3.f5':'Интеграция с performance marketing','pc3.f6':'SLA и приоритетная поддержка','pc3.btn':'Обсудить масштаб →',
   'cases.chip':'Кейсы','cases.h2':'Реальные результаты','cases.sub':'Клиенты из RU и EN рынков — монтаж, дизайн, полный цикл.',
   'tab.editing':'Монтаж','tab.producing':'Продюсирование','tab.design':'Дизайн',
   'market.ru':'RU рынок','market.en':'EN рынок',
@@ -1302,8 +1309,8 @@ ru:{
   'tm3.role':'Art Director','tm3.name':'Дизайнер','tm3.desc':'Визуальный язык бренда, thumbnails, UI-графика. Эстетика Quiet Luxury.',
   'tm4.role':'Sound Designer','tm4.name':'Саунд','tm4.desc':'Sound Design, музыкальное оформление, озвучка. Студийное качество.',
   'tm5.role':'Scriptwriter','tm5.name':'Сценарист','tm5.desc':'VSL-сценарии, нарративы, хуки. Специализация: Web3, Finance, Real Estate.',
-  'contact.chip':'Заявка','contact.h':'Готовы масштабировать бизнес?',
-  'contact.sub':'Оставьте заявку — ответим в течение 2 часов и проведём бесплатный аудит вашего медиапространства.',
+  'contact.chip':'Заявка','contact.h':'Запишитесь на стратегический Zoom',
+  'contact.sub':'15 минут — разберём ваш YouTube и набросаем план лидогенерации. Бесплатно.',
   'form.name':'Ваше имя','form.contact':'Telegram / WhatsApp','form.niche':'Ваша ниша','form.niche_ph':'Выберите нишу',
   'form.goal':'Задача / цель','form.submit':'Отправить заявку',
   'form.disclaimer':'Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Мы не спамим.',
@@ -1314,10 +1321,10 @@ ru:{
 en:{
   'nav.about':'About','nav.services':'Services','nav.pricing':'Pricing',
   'nav.cases':'Cases','nav.team':'Team','nav.cta':'Get a Quote',
-  'hero.tag':'Full-Cycle Media Production',
-  'hero.line1':'Visual Capital','hero.line2':'for Business',
-  'hero.sub':'High-end production for market leaders: Web3, Crypto, Trading, Real Estate, Healthcare',
-  'btn.showreel':'Watch Showreel','btn.tg':'Telegram','btn.yt':'YouTube',
+  'hero.tag':'YouTube Production System · Remote · End-to-End',
+  'hero.line1':'YouTube Channel','hero.line2':'as a Growth Asset',
+  'hero.sub':'4 hours of your time per month — we handle everything else. Strategy, scripts, editing, distribution. Warm leads without ad spend.',
+  'btn.zoom':'Strategy Zoom · 15 min →','btn.showreel':'Watch Showreel','btn.tg':'Telegram','btn.yt':'YouTube',
   'stat.markets':'Markets','stat.views':'Views','stat.exp':'In industry','stat.views_val':'300M+','stat.exp_val':'4+ years','founder.name':'Ivan Isakov',
   'about.chip':'About',
   'about.statement':'Paid ads stopped working — organic video wins',
@@ -1329,15 +1336,15 @@ en:{
   'fact.3':'average VSL ROI vs. paid ads',
   'founder.tag':'Founder','founder.role':'CEO, POLYAS MEDIA',
   'founder.bio':'4+ years in professional media production. Built POLYAS MEDIA to answer growing demand for conversion-focused video content at Western studio level.',
-  'services.chip':'Services','services.h2':'Three Directions — One Result',
-  'services.sub':'Full-cycle media production — from strategy to distribution.',
-  'svc1.title':'Design','svc1.desc':'A visual language that communicates premium quality at first glance and sets you apart on every platform.',
+  'services.chip':'Services','services.h2':'One Ecosystem — Three Modules',
+  'services.sub':'Full YouTube Production is the flagship. Editing and Design are structural modules — available as part of the system or standalone.',
+  'svc1.title':'Thumbnails & Visual','svc1.desc':'CTR-optimized channel artwork and visual identity that communicates premium quality at first glance and doubles click-through rate.',
   'svc1.i1':'Thumbnails & channel artwork','svc1.i2':'Branding & identity','svc1.i3':'Motion Graphics & intros','svc1.i4':'UI graphics for video',
-  'svc2.title':'Editing','svc2.desc':'Rhythm, dynamics, atmosphere. Editing that keeps attention locked until the last second.',
+  'svc2.title':'Sales Editing','svc2.desc':'Tech Luxury editing at Western studio level — holds attention, builds narrative, converts viewers into leads.',
   'svc2.s1':'PROJECTS','svc2.s2':'YRS EXP','svc2.s3':'DAYS','svc2.i1':'Narrative & dynamic editing','svc2.i2':'Sound Design & voiceover','svc2.i3':'VFX & color grading','svc2.i4':'Adaptation for YT, Reels, TG',
-  'svc3.title':'Production','svc3.desc':'You set the direction — we build the full media infrastructure. Includes editing and design as one unified system.',
-  'svc3.s1':'REACH','svc3.s2':'LEADS/MO','svc3.s3':'PROJECTS','svc3.i1':'Content strategy & scripts','svc3.i2':'Design + editing in one style','svc3.i3':'Shoot organization & team','svc3.i4':'Analytics & optimization',
-  'svc3.usp':'4 hours of your time',
+  'svc3.title':'YouTube End-to-End','svc3.desc':'You record 4 hours per month — we handle everything else. Strategy, scripts, editing, design, distribution, lead funnel.',
+  'svc3.s1':'REACH','svc3.s2':'LEADS/MO','svc3.s3':'PROJECTS','svc3.i1':'Deep pre-production & VSL scripts','svc3.i2':'Remote recording direction','svc3.i3':'Tech Luxury editing + premium design','svc3.i4':'Lead funnel + analytics',
+  'svc3.usp':'4 hours per month — your only commitment',
   'process.chip':'Process','process.h2':'From Brief to Result','process.sub':'Five stages of a refined production pipeline.',
   'step1.label':'Contract','step2.label':'Concept','step3.label':'Infrastructure','step4.label':'Production','step5.label':'Post-Pro',
   'step1.num':'Step 01 / 05','step2.num':'Step 02 / 05','step3.num':'Step 03 / 05','step4.num':'Step 04 / 05','step5.num':'Step 05 / 05',
@@ -1351,13 +1358,13 @@ en:{
   'step4.t1':'Filming','step4.t2':'Studio','step4.t3':'4 hours',
   'step5.title':'Post-Production','step5.desc':'Editing, color grading, Sound Design, final render. Delivery in agreed formats and timelines. Post-publication analytics.',
   'step5.t1':'Editing','step5.t2':'Color','step5.t3':'Delivery','step5.t4':'Analytics',
-  'pricing.chip':'Pricing','pricing.h2':'Transparent Conditions','pricing.sub':'Choose the format for your goals and business scale.',
-  'pc1.name':'Design','pc1.tagline':'Visual system for your channel and brand.','pc1.price':'from $100','pc1.period':'per project',
-  'pc1.f1':'Thumbnails & artwork','pc1.f2':'Branding & identity','pc1.f3':'Motion Graphics & intros','pc1.f4':'UI graphics for video','pc1.f5':'Up to 3 revisions included','pc1.btn':'Discuss project',
-  'pc2.name':'Editing','pc2.tagline':'Rhythm and atmosphere that keep viewers till the end.','pc2.price':'from $200','pc2.period':'per video',
-  'pc2.f1':'Narrative & dynamic editing','pc2.f2':'Sound Design & voiceover','pc2.f3':'VFX & color grading','pc2.f4':'Adaptation for YT, Reels, TG','pc2.f5':'Up to 5 revisions included','pc2.f6':'Turnaround: 5–7 business days','pc2.btn':'Get a Quote',
-  'pc3.name':'Production','pc3.tagline':'Full media infrastructure. Bespoke format for your scale.','pc3.price':'from $1,500','pc3.period':'per month · Bespoke',
-  'pc3.f1':'Content strategy & VSL scripts','pc3.f2':'Design + editing in one style','pc3.f3':'Shoot organization & team','pc3.f4':'KPI reporting & analytics','pc3.f5':'Only 4 hours of your time','pc3.f6':'Direct access to founder','pc3.btn':'Bespoke Inquiry →',
+  'pricing.chip':'Pricing','pricing.h2':'Three Formats — One Standard','pricing.sub':'Choose your level. 80% of clients choose the System.',
+  'pc1.name':'Project','pc1.tagline':'Execution only — for those who already have a strategy.','pc1.price':'from $300','pc1.period':'per video',
+  'pc1.f1':'High-retention Tech Luxury editing','pc1.f2':'Sound Design & color grading','pc1.f3':'CTR-optimized thumbnails','pc1.f4':'Adaptation for YT, Reels, TG','pc1.f5':'Up to 3 revisions included','pc1.btn':'Discuss project',
+  'pc2.name':'System','pc2.tagline':'YouTube channel as a lead generation asset — fully end-to-end.','pc2.price':'from $1,500','pc2.period':'per month',
+  'pc2.f1':'Full strategy & VSL scripts','pc2.f2':'Remote recording direction','pc2.f3':'Tech Luxury editing + premium design','pc2.f4':'Distribution + lead funnel','pc2.f5':'KPI analytics & optimization','pc2.f6':'Only 4 hours of your time per month','pc2.btn':'Strategy Zoom →',
+  'pc3.name':'Enterprise','pc3.tagline':'Multi-channel scaling with a dedicated production team.','pc3.price':'Custom Quote','pc3.period':'bespoke',
+  'pc3.f1':'Everything in System tier','pc3.f2':'Shorts, Reels, TikTok — multi-platform','pc3.f3':'Multi-language content localization','pc3.f4':'Dedicated project team','pc3.f5':'Performance marketing integration','pc3.f6':'SLA & priority support','pc3.btn':'Discuss Scale →',
   'cases.chip':'Cases','cases.h2':'Real Results','cases.sub':'Clients from RU and EN markets — editing, design, full cycle.',
   'tab.editing':'Editing','tab.producing':'Production','tab.design':'Design',
   'market.ru':'RU market','market.en':'EN market',
@@ -1386,8 +1393,8 @@ en:{
   'tm3.role':'Art Director','tm3.name':'Designer','tm3.desc':'Brand visual language, thumbnails, UI graphics. Quiet Luxury aesthetic.',
   'tm4.role':'Sound Designer','tm4.name':'Sound','tm4.desc':'Sound Design, music, voiceover. Studio-grade quality.',
   'tm5.role':'Scriptwriter','tm5.name':'Scriptwriter','tm5.desc':'VSL scripts, narratives, hooks. Specialization: Web3, Finance, Real Estate.',
-  'contact.chip':'Apply','contact.h':'Ready to scale your business?',
-  'contact.sub':'Leave a request — we respond within 2 hours with a free media audit.',
+  'contact.chip':'Apply','contact.h':'Book a Strategy Zoom',
+  'contact.sub':'15 minutes — we\'ll audit your YouTube and map out your lead gen plan. Free.',
   'form.name':'Your name','form.contact':'Telegram / WhatsApp','form.niche':'Your niche','form.niche_ph':'Select niche',
   'form.goal':'Goal / task','form.submit':'Send Request',
   'form.disclaimer':'By clicking, you agree to personal data processing. No spam.',
