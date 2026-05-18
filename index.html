@@ -100,7 +100,7 @@
   .founder-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
   .founder-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(57,255,20,0.05) 0%,transparent 55%);z-index:2;pointer-events:none}
   .founder-photo::after{content:"";position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(10,10,10,0.65),transparent);z-index:2;pointer-events:none}
-  .founder-photo-label{font-family:"Unbounded",sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(57,255,20,0.45);position:relative;z-index:2}
+  .founder-photo-label{font-family:"Unbounded",sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(57,255,20,0.45);position:relative;z-index:2;display:none}
   .founder-info{padding:28px 30px 30px}
   .founder-tag{font-family:"Unbounded",sans-serif;font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:8px}
   .founder-name{font-family:"Unbounded",sans-serif;font-size:20px;font-weight:900;color:var(--fg);letter-spacing:-.025em;margin-bottom:4px}
@@ -220,7 +220,7 @@
   .team-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(57,255,20,0.04) 0%,transparent 50%);z-index:3;pointer-events:none}
   .team-photo::after{content:"";position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(to top,rgba(10,10,10,0.6),transparent);z-index:3;pointer-events:none}
   .team-avatar-letter{font-family:"Unbounded",sans-serif;font-size:36px;font-weight:900;color:rgba(57,255,20,0.2);position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%)}
-  .team-photo-label{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-family:"Unbounded",sans-serif;font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(57,255,20,0.4);z-index:2;white-space:nowrap}
+  .team-photo-label{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-family:"Unbounded",sans-serif;font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(57,255,20,0.4);z-index:2;white-space:nowrap;display:none}
   .team-info{padding:18px 16px 20px;position:relative;z-index:1}
   .team-role{font-family:"Unbounded",sans-serif;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:6px}
   .team-name{font-family:"Unbounded",sans-serif;font-size:14px;font-weight:800;color:var(--fg);letter-spacing:-.02em;margin-bottom:6px}
@@ -274,7 +274,7 @@
   .success-body{font-size:14px;color:var(--fg-2);text-align:center;max-width:320px;line-height:1.65}
   footer{background:var(--bg);padding:72px 0 48px;border-top:1px solid rgba(57,255,20,0.06);position:relative}
   footer::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:28%;height:1px;background:linear-gradient(90deg,transparent,rgba(57,255,20,0.28),transparent)}
-  .footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:64px;margin-bottom:56px}
+  .footer-top{display:grid;grid-template-columns:280px 1fr 1fr;gap:40px;margin-bottom:56px}
   .footer-logo{font-family:"Unbounded",sans-serif;font-size:18px;font-weight:900;margin-bottom:10px}
   .footer-logo span{color:var(--lime);text-shadow:0 0 14px rgba(57,255,20,0.4)}
   .footer-tagline{font-size:13px;color:var(--fg-3);line-height:1.6;margin-bottom:24px;max-width:220px}
@@ -289,7 +289,7 @@
   .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:32px;border-top:1px solid rgba(57,255,20,0.05)}
   .footer-copy{font-size:11px;color:var(--fg-3)}
   .footer-made{font-size:11px;color:var(--fg-4);letter-spacing:.04em}
-  @media(max-width:1024px){.services-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.team-grid{grid-template-columns:repeat(3,1fr)}.about-grid{grid-template-columns:1fr;gap:48px}.about-grid>*:nth-child(2){max-width:440px;margin:0 auto;width:100%}.footer-top{grid-template-columns:1fr 1fr}.cases-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:1024px){.services-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.team-grid{grid-template-columns:repeat(3,1fr)}.about-grid{grid-template-columns:1fr;gap:48px}.about-grid>*:nth-child(2){max-width:440px;margin:0 auto;width:100%}.footer-top{grid-template-columns:240px 1fr 1fr;gap:32px}.cases-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:768px){
     .container{padding:0 16px}
     section{padding:72px 0}
@@ -308,7 +308,7 @@
     .svc-card.premium{order:-1}
     .svc-card{padding:28px 24px}
     /* ── PRICING: horizontal snap carousel ── */
-    .pricing-grid{display:flex;overflow-x:scroll;overflow-y:visible;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:16px;padding:8px 24px 20px;margin:0 -16px;grid-template-columns:unset;align-items:start}
+    .pricing-grid{display:flex;overflow-x:scroll;overflow-y:visible;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:16px;padding:28px 24px 28px;margin:-20px -16px -20px;grid-template-columns:unset;align-items:start}
     .pricing-grid::-webkit-scrollbar{display:none}
     .price-card{flex:0 0 80vw;max-width:300px;scroll-snap-align:center}
     .price-card.featured{flex:0 0 84vw;max-width:320px}
@@ -354,7 +354,7 @@
     .case-thumb{height:180px}
     .about-facts{grid-template-columns:1fr 1fr}
     .about-fact-num{font-size:36px}
-    .pricing-grid{gap:12px;padding:8px 16px 20px;margin:0 -14px}
+    .pricing-grid{gap:12px;padding:28px 16px 28px;margin:-20px -14px -20px}
     .price-card{flex:0 0 86vw}
     .price-card.featured{flex:0 0 90vw}
     .services-grid{gap:12px}
@@ -482,7 +482,7 @@
   }
   /* ── HERO & PRICING GLOW CLIP FIX ── */
   @media(max-width:768px){
-    #hero{overflow-x:hidden;overflow-y:visible}
+    #hero{overflow-x:clip;overflow-y:visible}
     #pricing .container{overflow:visible}
   }
   </style>
@@ -768,6 +768,11 @@
       <h2 data-key="pricing.h2">Прозрачные условия</h2>
       <p data-key="pricing.sub">Выберите формат под ваши задачи и масштаб бизнеса.</p>
     </div>
+    <div class="pricing-swipe-hint" aria-hidden="true">
+      <span class="swipe-arrow-l">←</span>
+      <span class="swipe-hint-text" data-key="pricing.swipe">Свайп для просмотра тарифов</span>
+      <span class="swipe-arrow-r">→</span>
+    </div>
     <div class="pricing-grid">
 
       <!-- TIER 1: PROJECT -->
@@ -827,11 +832,6 @@
         <a href="https://t.me/mediapolyas" target="_blank" class="btn btn-ghost btn-full" data-key="pc3.btn">Обсудить масштаб →</a>
       </div>
 
-    </div>
-    <div class="pricing-swipe-hint" aria-hidden="true">
-      <span class="swipe-arrow-l">←</span>
-      <span class="swipe-hint-text" data-key="pricing.swipe">Свайп для просмотра тарифов</span>
-      <span class="swipe-arrow-r">→</span>
     </div>
   </div>
 </section>
