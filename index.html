@@ -458,6 +458,33 @@
   .price-card.enterprise-card::after{content:"ENTERPRISE";position:absolute;top:24px;right:24px;font-family:"Unbounded",sans-serif;font-size:8px;font-weight:800;letter-spacing:.2em;color:rgba(255,255,255,0.28);padding:4px 10px;border-radius:100px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1)}
   .svc-card.premium::after{content:"FLAGSHIP" !important}
   .price-card.featured .price-service{background:linear-gradient(135deg,var(--fg) 0%,var(--lime) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+  /* ── PRICING SWIPE HINT ── */
+  .pricing-swipe-hint{display:none}
+  @media(max-width:768px){
+    .pricing-swipe-hint{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      margin-top:12px;padding:0 8px;
+      font-family:"Unbounded",sans-serif;font-size:9px;font-weight:700;
+      letter-spacing:.14em;text-transform:uppercase;color:rgba(240,240,240,0.28);
+    }
+    .swipe-arrow-l{animation:swipeL 2s ease-in-out infinite}
+    .swipe-arrow-r{animation:swipeR 2s ease-in-out infinite}
+    @keyframes swipeL{0%,100%{transform:translateX(0);opacity:.2}50%{transform:translateX(-5px);opacity:.6}}
+    @keyframes swipeR{0%,100%{transform:translateX(0);opacity:.2}50%{transform:translateX(5px);opacity:.6}}
+  }
+  /* ── MOBILE NAV LOGO FIX ── */
+  @media(max-width:768px){
+    .nav-logo{flex-shrink:0}
+    .nav-logo img{height:32px !important;width:auto !important;max-height:32px !important}
+    .nav-right{gap:8px;flex-shrink:0}
+    .nav-cta{padding:0 12px;font-size:8px;letter-spacing:.1em;height:34px;white-space:nowrap}
+  }
+  /* ── HERO & PRICING GLOW CLIP FIX ── */
+  @media(max-width:768px){
+    #hero{overflow-x:hidden;overflow-y:visible}
+    #pricing .container{overflow:visible}
+  }
   </style>
 </head>
 <body>
@@ -545,7 +572,7 @@
       <div class="r r-d2">
         <div class="founder-card">
           <div class="founder-photo">
-            <img src="assets/photos/founder-ivan.jpg" alt="Иван Исаков" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'"/>
+            <img src="assets/photos/founder-ivan.jpg" alt="Иван Исаков" onerror="this.style.display='none'" onload="var p=this.parentElement;var l=p.querySelector('.team-avatar-letter');var lb=p.querySelector('.team-photo-label');if(l)l.style.display='none';if(lb)lb.style.display='none'"/>
             <div class="founder-photo-label">[ Фото основателя ]</div>
           </div>
           <div class="founder-info">
@@ -800,6 +827,11 @@
         <a href="https://t.me/mediapolyas" target="_blank" class="btn btn-ghost btn-full" data-key="pc3.btn">Обсудить масштаб →</a>
       </div>
 
+    </div>
+    <div class="pricing-swipe-hint" aria-hidden="true">
+      <span class="swipe-arrow-l">←</span>
+      <span class="swipe-hint-text" data-key="pricing.swipe">Свайп для просмотра тарифов</span>
+      <span class="swipe-arrow-r">→</span>
     </div>
   </div>
 </section>
@@ -1307,7 +1339,7 @@ ru:{
   'pc2.name':'Система','pc2.tagline':'YouTube-канал как инструмент лидогенерации — полностью под ключ.','pc2.price':'от $1 500','pc2.period':'в месяц · 150 000 ₽',
   'pc2.f1':'Полная стратегия и VSL-сценарии','pc2.f2':'Дистанционная режиссура записи','pc2.f3':'Tech Luxury монтаж + премиальный дизайн','pc2.f4':'Дистрибуция + воронка лидогенерации','pc2.f5':'KPI-аналитика и оптимизация','pc2.f6':'Только 4 часа вашего времени в месяц','pc2.btn':'Стратегический Zoom →',
   'pc3.name':'Enterprise','pc3.tagline':'Мульти-канальное масштабирование с выделенной командой под проект.','pc3.price':'По запросу','pc3.period':'индивидуально',
-  'pc3.f1':'Всё из тарифа «Система»','pc3.f2':'Shorts, Reels, TikTok — мультиплатформа','pc3.f3':'Мультиязычная локализация контента','pc3.f4':'Выделенная команда под проект','pc3.f5':'Интеграция с performance marketing','pc3.f6':'SLA и приоритетная поддержка','pc3.btn':'Обсудить масштаб →',
+  'pc3.f1':'Всё из тарифа «Система»','pc3.f2':'Shorts, Reels, TikTok — мультиплатформа','pc3.f3':'Мультиязычная локализация контента','pc3.f4':'Выделенная команда под проект','pc3.f5':'Интеграция с performance marketing','pc3.f6':'SLA и приоритетная поддержка','pc3.btn':'Обсудить масштаб →','pricing.swipe':'Свайп для просмотра тарифов',
   'cases.chip':'Кейсы','cases.h2':'Реальные результаты','cases.sub':'Клиенты из RU и EN рынков — монтаж, дизайн, полный цикл.',
   'tab.editing':'Монтаж','tab.producing':'Продюсирование','tab.design':'Дизайн',
   'market.ru':'RU рынок','market.en':'EN рынок',
